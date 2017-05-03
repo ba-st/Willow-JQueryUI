@@ -8,6 +8,11 @@ SmalltalkCISpec {
     }
   ],
   #testing : {
-    #failOnZeroTests : false
+    #coverage : {
+       #packages : [ 'Willow-JQueryUI*' ]
+    },
+    #include : {
+       #packages : [ 'Willow-JQueryUI*-Tests' ]
+    }
   }
 }
