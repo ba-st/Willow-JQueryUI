@@ -1,0 +1,19 @@
+{
+  "name": "willow-jqueryui",
+  "version": "4.0.0",
+  "author": "Buenos Aires Smalltalk contributors",
+  "license": "MIT",
+  "dependencies": {
+    "jquery-ui": "1.11.4"
+  }
+  ,
+  "description": "JQuery UI and Willow integration",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ba-st/willow-jqueryui.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ba-st/willow-jqueryui/issues"
+  },
+  "homepage": "https://github.com/ba-st/willow-jqueryui"
+}
