@@ -1,0 +1,11 @@
+{
+	"commentStamp" : "",
+	"super" : "WillowTestCase",
+	"category" : "Willow-JQueryUI-Tests-Frontend",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [ ],
+	"name" : "JQueryUIComponentSupplierTest",
+	"type" : "normal"
+}

@@ -1,7 +1,7 @@
 {
-	"commentStamp" : "",
+	"commentStamp" : "MaximilianoTabacman 5/2/2017 09:11",
 	"super" : "WebComponentCommand",
-	"category" : "Willow-JQueryUI",
+	"category" : "Willow-JQueryUI-Frontend",
 	"classinstvars" : [ ],
 	"pools" : [ ],
 	"classvars" : [ ],

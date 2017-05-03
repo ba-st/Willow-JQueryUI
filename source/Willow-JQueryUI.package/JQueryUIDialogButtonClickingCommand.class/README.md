@@ -1,0 +1,1 @@
+I'm a component command with the logic to configure the interaction of the accept button of a JQueryUI dialog.

@@ -1,7 +1,7 @@
 {
 	"commentStamp" : "MaximilianoTabacman 3/22/2016 19:54",
 	"super" : "Object",
-	"category" : "Willow-JQueryUI",
+	"category" : "Willow-JQueryUI-WebViews",
 	"classinstvars" : [ ],
 	"pools" : [ ],
 	"classvars" : [ ],

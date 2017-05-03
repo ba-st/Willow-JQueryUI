@@ -1,7 +1,7 @@
 {
 	"commentStamp" : "MaximilianoTabacman 1/5/2017 09:56",
 	"super" : "SingleSelectionWebViewBehavior",
-	"category" : "Willow-JQueryUI",
+	"category" : "Willow-JQueryUI-WebViews",
 	"classinstvars" : [ ],
 	"pools" : [ ],
 	"classvars" : [ ],

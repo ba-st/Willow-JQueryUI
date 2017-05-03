@@ -1,5 +1,8 @@
-processing
+Processing
 updateRoot: aRoot
 
-	aRoot javascript url: filesLocation / 'jquery-ui.js'.
-	aRoot stylesheet url: filesLocation / 'jquery-ui.css'
+	aRoot beHtml5.
+	aRoot meta
+		name: 'viewport';
+		content: 'width=device-width, initial-scale=1.0'.
+	jQueryUILibraries do: [ :library | library updateRoot: aRoot ]

@@ -4,14 +4,16 @@
 		"tableShowing:applying:" : "MaximilianoTabacman 2/3/2017 08:57",
 		"widgetCssStyles" : "MaximilianoTabacman 12/24/2015 15:06",
 		"interactiveButtonRepresentedBy:hinting:" : "AutoDeprecationRefactoring 1/19/2017 23:16",
-		"updateRoot:" : "MaximilianoTabacman 4/6/2017 08:40",
+		"updateRoot:" : "MaximilianoTabacman 5/2/2017 09:36",
 		"interactiveButtonDescribedBy:representedBy:" : "AutoDeprecationRefactoring 1/20/2017 08:54",
 		"fieldSetTitled:containing:styledAsAll:" : "MaximilianoTabacman 1/10/2017 23:32",
 		"interactiveButtonDescribedBy:" : "AutoDeprecationRefactoring 1/20/2017 00:52",
-		"initializeLocatedAt:" : "MaximilianoTabacman 1/3/2017 08:15",
+		"initializeUsingAll:" : "MaximilianoTabacman 5/2/2017 09:38",
 		"borderedWidgetCssStyles" : "MaximilianoTabacman 12/24/2015 15:05"
 	},
 	"class" : {
-		"locatedAt:" : "MaximilianoTabacman 1/3/2017 08:14"
+		"online" : "MaximilianoTabacman 5/2/2017 09:43",
+		"usingAll:" : "MaximilianoTabacman 5/2/2017 09:38",
+		"withJQueryUILibrary:" : "MaximilianoTabacman 5/2/2017 23:59"
 	}
 }

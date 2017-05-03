@@ -1,7 +1,7 @@
 {
 	"commentStamp" : "MaximilianoTabacman 4/17/2016 10:27",
 	"super" : "JQSortable",
-	"category" : "Willow-JQueryUI",
+	"category" : "Willow-JQueryUI-Plugins",
 	"classinstvars" : [ ],
 	"pools" : [ ],
 	"classvars" : [ ],

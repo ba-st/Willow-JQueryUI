@@ -1,0 +1,11 @@
+{
+	"commentStamp" : "MaximilianoTabacman 5/2/2017 20:31",
+	"super" : "WillowOnlineLibrary",
+	"category" : "Willow-JQueryUI-Libraries",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [ ],
+	"name" : "JQueryUIOnlineLibrary",
+	"type" : "normal"
+}

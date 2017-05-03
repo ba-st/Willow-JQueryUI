@@ -1,4 +1,4 @@
-initialize-release
+initialization
 initializeInteractionInterpreter
 
 	interactionInterpreter := WebInteractionInterpreter forEvaluationOf: #add: withAll: #()

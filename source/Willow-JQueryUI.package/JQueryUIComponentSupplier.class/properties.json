@@ -1,12 +1,13 @@
 {
 	"commentStamp" : "MaximilianoTabacman 3/22/2016 19:53",
 	"super" : "FrontendComponentSupplier",
-	"category" : "Willow-JQueryUI",
+	"category" : "Willow-JQueryUI-Frontend",
 	"classinstvars" : [ ],
 	"pools" : [ ],
 	"classvars" : [ ],
 	"instvars" : [
-		"filesLocation"
+		"filesLocation",
+		"jQueryUILibraries"
 	],
 	"name" : "JQueryUIComponentSupplier",
 	"type" : "normal"
