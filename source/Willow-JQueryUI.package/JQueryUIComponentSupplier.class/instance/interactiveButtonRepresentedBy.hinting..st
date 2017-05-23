@@ -1,4 +1,4 @@
-accessing
+Supplying
 interactiveButtonRepresentedBy: anIcon hinting: aText
 
 	^ PhrasingContainerWebView

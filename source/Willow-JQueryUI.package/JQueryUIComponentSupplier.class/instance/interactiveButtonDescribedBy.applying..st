@@ -1,4 +1,4 @@
-accessing
+Supplying
 interactiveButtonDescribedBy: aDescription applying: aCommandToComponentCollection
 
 	^ SynchronicSubmitButtonWebView

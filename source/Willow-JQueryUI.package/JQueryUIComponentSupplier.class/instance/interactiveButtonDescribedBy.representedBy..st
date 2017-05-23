@@ -1,4 +1,4 @@
-accessing
+Supplying
 interactiveButtonDescribedBy: aDescription representedBy: anIcon
 
 	^ SynchronicSubmitButtonWebView

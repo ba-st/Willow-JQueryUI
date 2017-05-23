@@ -1,4 +1,4 @@
-accessing
+Supplying
 fieldSetTitled: aTitle containing: aWebView styledAsAll: aCssStyleCollection
 
 	| styles fieldSetCommand legendCommand |
