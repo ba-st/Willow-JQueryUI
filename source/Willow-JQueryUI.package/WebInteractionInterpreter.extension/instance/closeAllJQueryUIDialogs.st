@@ -1,4 +1,5 @@
 *Willow-JQueryUI
 closeAllJQueryUIDialogs
 
-	interaction onTriggerExecute: CloseAllJQueryUIDialogsCommand new
+	self deprecated: 'Use closeAllDialogs' transformWith: '̀@receiver closeAllJQueryUIDialogs' -> '̀@receiver closeAllDialogs'.
+	self closeAllDialogs
