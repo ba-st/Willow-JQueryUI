@@ -1,1 +1,0 @@
-I'm a component command closing all dialogs created with JQueryUI.
