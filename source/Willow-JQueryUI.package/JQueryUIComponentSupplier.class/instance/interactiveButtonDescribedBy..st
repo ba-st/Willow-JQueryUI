@@ -1,8 +1,7 @@
 Supplying
 interactiveButtonDescribedBy: aString
 
-	^ SynchronicSubmitButtonWebView
-		labeled: aString
-		applying:
-			(JQueryUIButtonCommand describedBy: aString)
+	^ self
+		synchronicButtonLabeled: aString
+		applying: (JQueryUIButtonCommand describedBy: aString)
 		evaluating: [  ]

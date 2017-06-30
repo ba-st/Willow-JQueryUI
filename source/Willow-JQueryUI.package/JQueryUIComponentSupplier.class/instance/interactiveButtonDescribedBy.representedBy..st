@@ -1,8 +1,7 @@
 Supplying
 interactiveButtonDescribedBy: aDescription representedBy: anIcon
 
-	^ SynchronicSubmitButtonWebView
-		labeled: aDescription
-		applying:
-			(JQueryUIButtonCommand representedBy: anIcon)
+	^ self
+		synchronicButtonLabeled: aDescription
+		applying: (JQueryUIButtonCommand representedBy: anIcon)
 		evaluating: [  ]

@@ -1,7 +1,13 @@
 {
 	"instance" : {
+		"testAsynchronicButtonLabeledApplying" : "MaximilianoTabacman 6/30/2017 08:38",
+		"testDropdownListApplying" : "MaximilianoTabacman 6/30/2017 08:38",
+		"testSynchronicButtonLabeledApplyingEvaluating" : "MaximilianoTabacman 6/30/2017 08:39",
+		"testUnorderedListApplyingListingApplyingToEach" : "MaximilianoTabacman 6/30/2017 08:39",
 		"testUpdateRoot" : "MaximilianoTabacman 5/3/2017 00:21",
-		"testUpdateRootWithSelfHostedLibraries" : "MaximilianoTabacman 5/3/2017 00:28"
+		"testSingleLineTextFieldApplying" : "MaximilianoTabacman 6/30/2017 08:39",
+		"testUpdateRootWithSelfHostedLibraries" : "MaximilianoTabacman 5/3/2017 00:28",
+		"testSingleSelectionListBoxDisplayingAtOnceApplying" : "MaximilianoTabacman 6/30/2017 08:42"
 	},
 	"class" : { }
 }

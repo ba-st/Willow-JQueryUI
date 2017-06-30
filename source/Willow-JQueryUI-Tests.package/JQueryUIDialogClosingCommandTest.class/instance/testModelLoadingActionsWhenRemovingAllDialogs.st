@@ -15,5 +15,4 @@ testModelLoadingActionsWhenRemovingAllDialogs
 
 	self
 		assert: html
-		equals:
-			'<a id="a-id1"></a><script type="text/javascript">$("#a-id1").click(function(){$("#willow-dialog-section").children(".ui-dialog-content").dialog("close")});</script>'
+		equals: '<a id="a-id1"></a><script type="text/javascript">$("#a-id1").click(function(){$(".ui-dialog-content").dialog("close")});</script>'
