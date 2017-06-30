@@ -1,22 +1,22 @@
 {
 	"instance" : {
 		"headlessTableShowing:applying:" : "MaximilianoTabacman 5/22/2017 19:39",
+		"singleSelectionListBoxDisplayingAtOnce:applying:" : "MaximilianoTabacman 6/27/2017 20:39",
 		"tableShowing:applying:" : "MaximilianoTabacman 2/3/2017 08:57",
-		"unorderedListApplying:listing:applyingToEach:" : "MaximilianoTabacman 6/27/2017 20:39",
 		"interactiveButtonRepresentedBy:hinting:" : "AutoDeprecationRefactoring 1/19/2017 23:16",
 		"synchronicButtonLabeled:applying:evaluating:" : "MaximilianoTabacman 6/27/2017 20:39",
-		"updateRoot:" : "MaximilianoTabacman 5/2/2017 09:36",
+		"unorderedListApplying:listing:applyingToEach:" : "MaximilianoTabacman 6/27/2017 20:39",
 		"interactiveButtonDescribedBy:representedBy:" : "MaximilianoTabacman 6/27/2017 20:39",
 		"fieldSetTitled:containing:styledAsAll:" : "MaximilianoTabacman 1/10/2017 23:32",
+		"updateRoot:" : "MaximilianoTabacman 5/2/2017 09:36",
 		"widgetCssStyles" : "MaximilianoTabacman 12/24/2015 15:06",
 		"interactiveButtonDescribedBy:" : "MaximilianoTabacman 6/27/2017 20:39",
 		"dropdownListApplying:" : "MaximilianoTabacman 6/27/2017 20:39",
 		"initializeUsingAll:" : "MaximilianoTabacman 5/2/2017 09:38",
-		"closeDialogsIn:suppliedBy:on:" : "MaximilianoTabacman 6/29/2017 11:21",
 		"singleLineTextFieldApplying:" : "MaximilianoTabacman 6/28/2017 09:28",
 		"asynchronicButtonLabeled:applying:" : "MaximilianoTabacman 6/27/2017 20:39",
 		"borderedWidgetCssStyles" : "MaximilianoTabacman 12/24/2015 15:05",
-		"singleSelectionListBoxDisplayingAtOnce:applying:" : "MaximilianoTabacman 6/27/2017 20:39"
+		"addStatementsTo:toCloseDialogsIn:matching:on:" : "GabrielOmarCotelli 6/30/2017 11:45"
 	},
 	"class" : {
 		"online" : "MaximilianoTabacman 5/2/2017 09:43",
