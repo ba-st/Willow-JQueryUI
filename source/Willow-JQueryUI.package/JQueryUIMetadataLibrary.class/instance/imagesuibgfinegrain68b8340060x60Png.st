@@ -1,7 +1,6 @@
 uploaded metadata
 imagesuibgfinegrain68b8340060x60Png
 
-	<ignoreForCoverage>
 	^ WAFileLibraryResource
 		filepath: 'images/ui-bg_fine-grain_68_b83400_60x60.png'
 		mimeType: (WAMimeType main: 'image' sub: 'png')

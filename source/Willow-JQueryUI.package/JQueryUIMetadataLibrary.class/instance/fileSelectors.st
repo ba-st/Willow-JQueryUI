@@ -1,5 +1,0 @@
-private
-fileSelectors
-
-	<ignoreForCoverage>
-	^ #(#imagesuibgdiagonalmaze206e4f1c10x10Png #imagesuibgdiagonalmaze4000000010x10Png #imagesuibgfinegrain10eceadf60x60Png #imagesuibgfinegrain10f8f7f660x60Png #imagesuibgfinegrain15eceadf60x60Png #imagesuibgfinegrain15f7f3de60x60Png #imagesuibgfinegrain15ffffff60x60Png #imagesuibgfinegrain65654b2460x60Png #imagesuibgfinegrain68b8340060x60Png #imagesuiicons222222256x240Png #imagesuiicons3572ac256x240Png #imagesuiicons8c291d256x240Png #imagesuiiconsb83400256x240Png #imagesuiiconsfbdb93256x240Png #imagesuiiconsffffff256x240Png)

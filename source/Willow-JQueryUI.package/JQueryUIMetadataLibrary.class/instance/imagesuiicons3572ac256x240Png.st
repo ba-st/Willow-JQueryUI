@@ -1,7 +1,6 @@
 uploaded metadata
 imagesuiicons3572ac256x240Png
 
-	<ignoreForCoverage>
 	^ WAFileLibraryResource
 		filepath: 'images/ui-icons_3572ac_256x240.png'
 		mimeType: (WAMimeType main: 'image' sub: 'png')

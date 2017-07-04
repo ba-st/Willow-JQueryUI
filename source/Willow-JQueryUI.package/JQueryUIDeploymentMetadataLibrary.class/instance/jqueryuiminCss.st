@@ -1,7 +1,6 @@
 uploaded metadata
 jqueryuiminCss
 
-	<ignoreForCoverage>
 	^ WAFileLibraryResource
 		filepath: 'jquery-ui.min.css'
 		mimeType: (WAMimeType main: 'text' sub: 'css')
