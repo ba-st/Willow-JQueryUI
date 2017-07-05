@@ -1,7 +1,6 @@
 uploaded metadata
 imagesuibgdiagonalmaze4000000010x10Png
 
-	<ignoreForCoverage>
 	^ WAFileLibraryResource
 		filepath: 'images/ui-bg_diagonal-maze_40_000000_10x10.png'
 		mimeType: (WAMimeType main: 'image' sub: 'png')

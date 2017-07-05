@@ -1,7 +1,6 @@
 uploaded metadata
 jqueryuiJs
 
-	<ignoreForCoverage>
 	^ WAFileLibraryResource
 		filepath: 'jquery-ui.js'
 		mimeType: (WAMimeType main: 'application' sub: 'x-javascript')

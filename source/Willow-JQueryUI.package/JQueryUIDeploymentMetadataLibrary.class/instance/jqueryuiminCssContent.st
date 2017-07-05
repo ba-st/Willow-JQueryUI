@@ -1,7 +1,6 @@
 uploaded
 jqueryuiminCssContent
 
-	<ignoreForCoverage>
 	^ '/*! jQuery UI - v1.11.4 - 2017-05-03
 * http://jqueryui.com
 * Includes: core.css, draggable.css, resizable.css, selectable.css, sortable.css, accordion.css, autocomplete.css, button.css, datepicker.css, dialog.css, menu.css, progressbar.css, selectmenu.css, slider.css, spinner.css, tabs.css, tooltip.css, theme.css

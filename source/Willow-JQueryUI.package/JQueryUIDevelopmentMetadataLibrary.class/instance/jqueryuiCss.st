@@ -1,7 +1,6 @@
 uploaded metadata
 jqueryuiCss
 
-	<ignoreForCoverage>
 	^ WAFileLibraryResource
 		filepath: 'jquery-ui.css'
 		mimeType: (WAMimeType main: 'text' sub: 'css')
