@@ -9,7 +9,7 @@ initializeDescribedBy: aDescription styledAs: aCssStyle
 				toStyleWithAll:
 					(OrderedCollection new
 						add: aCssStyle;
-						add: JQueryCssStyles uiWidgetContent;
-						add: JQueryCssStyles uiCornerAll;
+						add: JQueryUICssStyles uiWidgetContent;
+						add: JQueryUICssStyles uiCornerAll;
 						yourself)).
 	interactionInterpreter := WebInteractionInterpreter forClickOnComponent

@@ -5,8 +5,8 @@ showJQueryUILoadingNotification
 
 	classes := Array
 		with: WillowCssStyles topPageNotification
-		with: JQueryCssStyles uiStateFocus
-		with: JQueryCssStyles uiWidget
-		with: JQueryCssStyles uiWidgetHeader
-		with: JQueryCssStyles uiCornerAll.
+		with: JQueryUICssStyles uiStateFocus
+		with: JQueryUICssStyles uiWidget
+		with: JQueryUICssStyles uiWidgetHeader
+		with: JQueryUICssStyles uiCornerAll.
 	self showLoadingNotificationStyledAsAll: classes

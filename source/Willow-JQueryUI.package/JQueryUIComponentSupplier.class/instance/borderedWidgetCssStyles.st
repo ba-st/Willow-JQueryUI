@@ -3,5 +3,5 @@ borderedWidgetCssStyles
 
 	^ OrderedCollection new
 		addAll: self widgetCssStyles;
-		add: JQueryCssStyles uiCornerAll;
+		add: JQueryUICssStyles uiCornerAll;
 		yourself
