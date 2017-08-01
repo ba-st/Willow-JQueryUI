@@ -1,4 +1,4 @@
-jQueryUI
+dialog
 uiDialogContent
 
 	^'ui-dialog-content'
