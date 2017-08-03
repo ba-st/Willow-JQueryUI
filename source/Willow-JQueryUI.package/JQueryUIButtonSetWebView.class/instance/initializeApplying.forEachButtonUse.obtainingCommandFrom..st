@@ -1,7 +1,7 @@
 initialization
-initializeApplying: aCommandToComponent forEachButtonUse: aDefinition applying: aCommandToRadioButton
+initializeApplying: aCommandToComponent forEachButtonUse: aDefinition obtainingCommandFrom: aLabelCommandProvider
 
 	commandToComponent := aCommandToComponent.
-	commandToRadioButton := aCommandToComponent.
+	elementCommandProvider := aLabelCommandProvider.
 	radioButtonDefinition := aDefinition.
 	interactionInterpreter := WebInteractionInterpreter forChangeInComponentValue

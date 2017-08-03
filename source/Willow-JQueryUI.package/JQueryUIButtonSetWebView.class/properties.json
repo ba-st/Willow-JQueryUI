@@ -8,8 +8,8 @@
 	"instvars" : [
 		"commandToComponent",
 		"interactionInterpreter",
-		"commandToRadioButton",
-		"radioButtonDefinition"
+		"radioButtonDefinition",
+		"elementCommandProvider"
 	],
 	"name" : "JQueryUIButtonSetWebView",
 	"type" : "normal"
