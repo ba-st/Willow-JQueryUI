@@ -7,10 +7,12 @@ fieldSetTitled: aTitle containing: aWebView styledAsAll: aCssStyleCollection
 		addAll: aCssStyleCollection;
 		yourself.
 	fieldSetCommand := ComponentClassificationCommand toStyleWithAll: styles.
-	styles := Array with: JQueryUICssStyles uiWidgetHeader with: JQueryUICssStyles uiCornerAll.
+	styles := Array
+		with: JQueryUICssStyles uiWidgetHeader
+		with: JQueryUICssStyles uiCornerAll.
 	legendCommand := ComponentClassificationCommand toStyleWithAll: styles.
-	^ FieldSetWebView
-		containing: aWebView
+	^ self
+		fieldSetContaining: aWebView
 		applying: fieldSetCommand
 		withLegend: aTitle
 		applying: legendCommand
