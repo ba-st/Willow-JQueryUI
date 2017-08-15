@@ -8,7 +8,7 @@ baseline: spec
 			spec
 				package: 'Willow-JQueryUI' with: [ spec requires: #('Seaside3' 'Willow') ];
 				package: 'Willow-JQueryUI-Tests'
-					with: [ spec requires: #('Seaside3-Tests' 'Willow-JQueryUI' 'Willow-Tests') ].
+					with: [ spec requires: #('Willow-JQueryUI' 'Willow-Tests') ].
 			spec
 				group: 'Deployment' with: #('Willow-JQueryUI');
 				group: 'Development' with: #('Deployment' 'Willow-JQueryUI-Tests');
