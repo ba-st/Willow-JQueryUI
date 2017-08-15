@@ -8,7 +8,7 @@ setUpDependencies: spec
 		with: [ spec
 				repository: 'github://SeasideSt/Seaside:v3.2.4/repository';
 				loads: #('JQuery-UI') ].
-
+			
 	repoLocation := 'github://ba-st/Willow:master/source'.
 	spec
 		baseline: 'Willow'
@@ -16,7 +16,8 @@ setUpDependencies: spec
 				repository: repoLocation;
 				loads: #('Willow') ].
 	spec
-		baseline: 'Willow-Tests'
-		with: [ spec
+		project: 'Willow-Tests';
+		baseline: 'Willow'
+			with: [ spec
 				repository: repoLocation;
 				loads: #('Willow-Tests') ]
