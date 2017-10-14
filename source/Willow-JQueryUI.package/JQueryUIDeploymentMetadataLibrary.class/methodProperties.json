@@ -1,10 +1,12 @@
 {
 	"instance" : {
-		"selectorsToInclude" : "MaximilianoTabacman 5/2/2017 23:58",
-		"jqueryuiminJsContent" : "GabrielOmarCotelli 7/4/2017 16:41",
-		"jqueryuiminCssContent" : "GabrielOmarCotelli 7/4/2017 16:40",
-		"jqueryuiminCss" : "GabrielOmarCotelli 7/4/2017 16:41",
-		"jqueryuiminJs" : "GabrielOmarCotelli 7/4/2017 16:41"
+		"jqueryuithememinCss" : "MaximilianoTabacman 10/8/2017 11:19",
+		"selectorsToInclude" : "MaximilianoTabacman 10/8/2017 11:20",
+		"jqueryuistructureminCss" : "MaximilianoTabacman 10/8/2017 11:19",
+		"jqueryuithememinCssContent" : "MaximilianoTabacman 10/8/2017 11:19",
+		"jqueryuiminJsContent" : "MaximilianoTabacman 10/8/2017 11:19",
+		"jqueryuistructureminCssContent" : "MaximilianoTabacman 10/8/2017 11:19",
+		"jqueryuiminJs" : "MaximilianoTabacman 10/8/2017 11:19"
 	},
 	"class" : {
 		"isForDeployment" : "MaximilianoTabacman 5/2/2017 20:33"

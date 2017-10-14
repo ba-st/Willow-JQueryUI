@@ -2,4 +2,4 @@ accessing
 selectorsToInclude
 
 	<ignoreForCoverage>
-	^ #(jqueryuiminCss jqueryuiminJs)
+	^ #(jqueryuistructureminCss jqueryuithememinCss jqueryuiminJs)

@@ -1,6 +1,5 @@
 uploaded metadata
 imagesuibgfinegrain15eceadf60x60Png
-
 	^ WAFileLibraryResource
 		filepath: 'images/ui-bg_fine-grain_15_eceadf_60x60.png'
 		mimeType: (WAMimeType main: 'image' sub: 'png')

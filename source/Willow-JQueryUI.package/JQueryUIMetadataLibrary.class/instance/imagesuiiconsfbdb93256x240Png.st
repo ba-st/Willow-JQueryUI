@@ -1,6 +1,5 @@
 uploaded metadata
 imagesuiiconsfbdb93256x240Png
-
 	^ WAFileLibraryResource
 		filepath: 'images/ui-icons_fbdb93_256x240.png'
 		mimeType: (WAMimeType main: 'image' sub: 'png')

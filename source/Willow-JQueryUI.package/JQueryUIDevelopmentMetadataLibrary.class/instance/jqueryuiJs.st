@@ -1,6 +1,5 @@
 uploaded metadata
 jqueryuiJs
-
 	^ WAFileLibraryResource
 		filepath: 'jquery-ui.js'
 		mimeType: (WAMimeType main: 'application' sub: 'x-javascript')
