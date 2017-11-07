@@ -1,4 +1,4 @@
 *Willow-JQueryUI
 uiCornerAll
 
-	^ self commmandStyledWith: styleProviderBinding content uiCornerAll
+	^ self commandStyledWith: styleProviderBinding content uiCornerAll
