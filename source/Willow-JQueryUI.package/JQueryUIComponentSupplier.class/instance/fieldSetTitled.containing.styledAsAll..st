@@ -1,4 +1,4 @@
-Supplying
+Supplying - Non Portable
 fieldSetTitled: aTitle containing: aWebView styledAsAll: aCssStyleCollection
 
 	| styles fieldSetCommand |

@@ -1,4 +1,4 @@
-Supplying
+Supplying - Non Portable
 interactiveButtonDescribedBy: aDescription representedBy: anIcon
 
 	^ self
