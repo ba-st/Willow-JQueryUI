@@ -1,4 +1,4 @@
-configuring - private
+private - configuring
 addAcceptButtonLabeled: aString to: aDialog on: aCanvas
 
 	| functions |
