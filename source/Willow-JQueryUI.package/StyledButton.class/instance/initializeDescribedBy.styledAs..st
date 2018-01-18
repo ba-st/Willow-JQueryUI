@@ -1,4 +1,4 @@
-initialize-release
+initialization
 initializeDescribedBy: aDescription styledAs: aCssStyle
 
 	commandsToComponent := OrderedCollection new.
