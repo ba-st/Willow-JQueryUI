@@ -1,4 +1,4 @@
-initialize - release
+initialization
 initializeContaining: aContentView styledAs: aCssStyle
 
 	contentView := aContentView.
