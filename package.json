@@ -1,6 +1,6 @@
 {
   "name": "willow-jqueryui",
-  "version": "4.0.1",
+  "version": "5.0.0",
   "author": "Buenos Aires Smalltalk contributors",
   "license": "MIT",
   "dependencies": {
