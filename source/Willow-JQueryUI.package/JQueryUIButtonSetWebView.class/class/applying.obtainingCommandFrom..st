@@ -2,5 +2,5 @@ instance creation
 applying: aCommandToComponent obtainingCommandFrom: aLabelCommandProvider
 
 	^ self new
-		initializeApplying: aCommandToComponent
+		initializeApplying: aCommandToComponent asWebComponentCommand
 		obtainingCommandFrom: aLabelCommandProvider
