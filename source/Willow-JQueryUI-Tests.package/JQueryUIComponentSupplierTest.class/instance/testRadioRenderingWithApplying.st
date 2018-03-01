@@ -3,12 +3,12 @@ testRadioRenderingWithApplying
 
 	self
 		assertRenderingOf:
-			[ :supplier | supplier radioRenderingWith: #asUppercase applying: [ :radio | radio addClass willow ] ]
+			[ :supplier | supplier radioRenderingWith: #asUppercase applyingToLabel: [ :radio | radio addClass willow ] applyingToInput: [ :radio | radio addClass willow ] ]
 		equals: ''.
 
 	self
 		assertRenderingOf: [ :supplier | 
-			(supplier radioRenderingWith: #asUppercase applying: [ :radio | radio addClass willow ])
+			(supplier radioRenderingWith: #asUppercase applyingToLabel: [ :radio | radio addClass willow ] applyingToInput: [ :radio | radio addClass willow ])
 				allowAnyOf: #(f h);
 				yourself ]
 		equals:
