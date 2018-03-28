@@ -1,6 +1,6 @@
 {
 	"commentStamp" : "",
-	"super" : "WillowLibraryTestCase",
+	"super" : "WARenderingTest",
 	"category" : "Willow-JQueryUI-Tests-Libraries",
 	"classinstvars" : [ ],
 	"pools" : [ ],

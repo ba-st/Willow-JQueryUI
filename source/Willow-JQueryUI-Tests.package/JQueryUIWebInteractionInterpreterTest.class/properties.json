@@ -1,6 +1,6 @@
 {
 	"commentStamp" : "GabrielOmarCotelli 8/15/2017 10:23",
-	"super" : "WillowTestCase",
+	"super" : "WARenderingTest",
 	"category" : "Willow-JQueryUI-Tests-WebInteraction",
 	"classinstvars" : [ ],
 	"pools" : [ ],

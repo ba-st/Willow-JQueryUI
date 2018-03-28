@@ -1,6 +1,6 @@
 {
 	"commentStamp" : "MaximilianoTabacman 5/2/2017 20:31",
-	"super" : "WillowOnlineLibrary",
+	"super" : "WAOnlineLibrary",
 	"category" : "Willow-JQueryUI-Libraries",
 	"classinstvars" : [ ],
 	"pools" : [ ],
