@@ -1,1 +1,0 @@
-I'm a test for JQuery UI related extensions on WebInteractionInterpreter

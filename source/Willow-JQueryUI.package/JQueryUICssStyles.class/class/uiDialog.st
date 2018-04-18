@@ -1,4 +1,0 @@
-dialog
-uiDialog
-
-	^'ui-dialog'

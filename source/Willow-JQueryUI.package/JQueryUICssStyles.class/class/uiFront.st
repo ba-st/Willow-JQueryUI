@@ -1,4 +1,0 @@
-jQueryUI
-uiFront
-
-	^'ui-front'

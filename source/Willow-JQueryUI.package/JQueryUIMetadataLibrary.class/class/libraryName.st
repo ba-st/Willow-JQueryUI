@@ -1,4 +1,0 @@
-Accessing
-libraryName
-
-	^ 'jquery-ui'

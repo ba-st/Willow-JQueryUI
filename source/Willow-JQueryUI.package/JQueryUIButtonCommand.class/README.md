@@ -1,1 +1,0 @@
-I'm a component command that transforms a button into a JQueryUI button.

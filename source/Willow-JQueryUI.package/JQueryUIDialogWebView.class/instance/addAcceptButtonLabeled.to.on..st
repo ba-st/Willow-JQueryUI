@@ -1,8 +1,0 @@
-private - configuring
-addAcceptButtonLabeled: aString to: aDialog on: aCanvas
-
-	| functions |
-
-	functions := Set new.
-	interactionInterpreter applyTo: functions on: aCanvas.
-	aDialog addButton: aString do: functions any
