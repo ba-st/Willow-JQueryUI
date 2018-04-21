@@ -80,6 +80,12 @@ JQueryUIComponentSupplier >> decimalNumberFieldApplying: aComponentCommand [
 	^ NumberFieldWebView applying: aComponentCommand transformingWith: FloatCodec new
 ]
 
+{ #category : #'Supplying - Non Portable' }
+JQueryUIComponentSupplier >> dialogBuilder [
+
+	^ JQueryUIDialogBuilder new
+]
+
 { #category : #Supplying }
 JQueryUIComponentSupplier >> dropdownListApplying: aComponentCommand [
 

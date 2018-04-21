@@ -15,31 +15,14 @@ Class {
 	#category : 'Willow-JQueryUI-WebViews'
 }
 
-{ #category : #'private - instance creation' }
-JQueryUIDialogWebView class >> titled: aTitle containing: aWebView optingFor: anOptional [
-
-	^ self new initializeTitled: aTitle containing: aWebView optingFor: anOptional
-]
-
 { #category : #'instance creation' }
-JQueryUIDialogWebView class >> titled: aTitle toConfirm: aWebView [
+JQueryUIDialogWebView class >> titled: aTitle containing: aRenderable acceptedUsing: aTextOptional applying: aDocumentCommand [
 
-	^ self titled: aTitle toConfirm: aWebView with: 'Accept'
-]
-
-{ #category : #'instance creation' }
-JQueryUIDialogWebView class >> titled: aTitle toConfirm: aWebView with: anAcceptanceText [
-
-	^ self
-		titled: aTitle
-		containing: aWebView
-		optingFor: (Optional containing: anAcceptanceText)
-]
-
-{ #category : #'instance creation' }
-JQueryUIDialogWebView class >> titled: aTitle toShow: aWebView [
-
-	^ self titled: aTitle containing: aWebView optingFor: Optional unused
+	^ self new
+		initializeTitled: aTitle
+		containing: aRenderable
+		acceptedUsing: aTextOptional
+		applying: aDocumentCommand
 ]
 
 { #category : #'private - configuring' }
@@ -105,10 +88,10 @@ JQueryUIDialogWebView >> functionToRemoveComponentOn: aCanvas [
 ]
 
 { #category : #initialization }
-JQueryUIDialogWebView >> initializeCommandToComponent [
+JQueryUIDialogWebView >> initializeCommandToComponentWith: aCommand [
 
-	commandToComponent := ComponentScriptCommand
-		toExecute: [ :canvas | self dialogScriptOn: canvas ]
+	commandToComponent := aCommand asWebComponentCommand
+		+ [ :button | button addScript js: [ :canvas | self dialogScriptOn: canvas ] ]
 ]
 
 { #category : #initialization }
@@ -118,13 +101,13 @@ JQueryUIDialogWebView >> initializeInteractionInterpreter [
 ]
 
 { #category : #initialization }
-JQueryUIDialogWebView >> initializeTitled: aTitle containing: aWebView optingFor: anOptional [
+JQueryUIDialogWebView >> initializeTitled: aTitle containing: aRenderable acceptedUsing: aTextOptional applying: aComponentCommand [
 
 	title := aTitle.
-	contentsView := aWebView.
-	acceptButtonOptional := anOptional.
+	contentsView := aRenderable.
+	acceptButtonOptional := aTextOptional.
 	self initializeInteractionInterpreter.
-	self initializeCommandToComponent.
+	self initializeCommandToComponentWith: aComponentCommand.
 	self configureToAcceptOnTrigger
 ]
 
