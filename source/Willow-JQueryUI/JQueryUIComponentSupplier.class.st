@@ -122,7 +122,7 @@ JQueryUIComponentSupplier >> fieldSetTitled: aTitle containing: aWebView styledA
 { #category : #'Supplying - Non Portable' }
 JQueryUIComponentSupplier >> headlessTableShowing: aColumnRendererCollection applying: aCommand [
 
-	^ TableWebView headlessDefinedBy: aColumnRendererCollection applying: aCommand
+	self deprecated: 'Use tableBuilder and the new column definition API'
 ]
 
 { #category : #initialization }
@@ -210,7 +210,7 @@ JQueryUIComponentSupplier >> tableBuilder [
 { #category : #'Supplying - Non Portable' }
 JQueryUIComponentSupplier >> tableShowing: aColumnRendererCollection applying: aCommand [
 
-	^ TableWebView headedDefinedBy: aColumnRendererCollection applying: aCommand
+	self deprecated: 'Use tableBuilder and the new column definition API'
 ]
 
 { #category : #Supplying }
