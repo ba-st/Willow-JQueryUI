@@ -119,12 +119,6 @@ JQueryUIComponentSupplier >> fieldSetTitled: aTitle containing: aWebView styledA
 			[ :legend | legend addClass jQueryUI uiWidgetHeader + legend addClass jQueryUI uiCornerAll ]
 ]
 
-{ #category : #'Supplying - Non Portable' }
-JQueryUIComponentSupplier >> headlessTableShowing: aColumnRendererCollection applying: aCommand [
-
-	^ TableWebView headlessDefinedBy: aColumnRendererCollection applying: aCommand
-]
-
 { #category : #initialization }
 JQueryUIComponentSupplier >> initializeUsingAll: aLibraryCollection [
 
@@ -205,12 +199,6 @@ JQueryUIComponentSupplier >> synchronicLinkLabeled: aRenderable applying: aCompo
 JQueryUIComponentSupplier >> tableBuilder [
 
 	^ TableWebViewBuilder new
-]
-
-{ #category : #'Supplying - Non Portable' }
-JQueryUIComponentSupplier >> tableShowing: aColumnRendererCollection applying: aCommand [
-
-	^ TableWebView headedDefinedBy: aColumnRendererCollection applying: aCommand
 ]
 
 { #category : #Supplying }
