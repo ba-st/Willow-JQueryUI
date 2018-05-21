@@ -13,6 +13,12 @@ ComponentClassificationCommandBuilder >> uiCornerAll [
 ]
 
 { #category : #'*Willow-JQueryUI' }
+ComponentClassificationCommandBuilder >> uiStateDefault [
+
+	^ self commandStyledWith: styleProviderBinding content uiStateDefault
+]
+
+{ #category : #'*Willow-JQueryUI' }
 ComponentClassificationCommandBuilder >> uiWidget [
 
 	^ self commandStyledWith: styleProviderBinding content uiWidget
