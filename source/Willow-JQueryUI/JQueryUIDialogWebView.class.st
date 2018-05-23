@@ -84,7 +84,7 @@ JQueryUIDialogWebView >> dialogScriptOn: aCanvas [
 JQueryUIDialogWebView >> functionToRemoveComponentOn: aCanvas [
 
 	^ aCanvas jQuery this remove
-		, ((aCanvas jQuery id: WillowConstants dialogSectionName) html: [ :aSubCanvas |  ])
+		, ((aCanvas jQuery id: Willow constants >> #willow >> #dialogSectionName) html: [ :aSubCanvas |  ])
 ]
 
 { #category : #initialization }
