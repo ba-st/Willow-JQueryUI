@@ -30,8 +30,8 @@ JQueryUIWebInteractionInterpreterTest >> testCombinedToggleCssClassOnComponentsW
 			cancelButton}.
 
 	interpreter
-		toggleCssClass: WillowCssStyles loading
-		onComponentsWithClass: WillowCssStyles willow
+		toggleCssClass: Willow classes >> #loading
+		onComponentsWithClass: Willow classes >> #willow
 		withEffect: #bounce.
 
 	html := self
@@ -52,12 +52,12 @@ JQueryUIWebInteractionInterpreterTest >> testToggleCssClassOnComponentsWithClass
 
 	interpreter := WebInteractionInterpreter forClickOnComponent.
 	interpreter
-		toggleCssClass: WillowCssStyles loading
-		onComponentsWithClass: WillowCssStyles willow
+		toggleCssClass: Willow classes >> #loading
+		onComponentsWithClass: Willow classes >> #willow
 		withEffect: #bounce.
 	html := self
 		apply: interpreter
-		toComponentDefinedBy: [ :canvas | canvas textInput class: WillowCssStyles willow ].
+		toComponentDefinedBy: [ :canvas | canvas textInput class: Willow classes >> #willow ].
 	self
 		assert: html
 		equals:

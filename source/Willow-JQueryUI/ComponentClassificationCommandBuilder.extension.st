@@ -3,35 +3,35 @@ Extension { #name : #ComponentClassificationCommandBuilder }
 { #category : #'*Willow-JQueryUI' }
 ComponentClassificationCommandBuilder >> jQueryUI [
 
-	styleProviderBinding := Binding to: JQueryUICssStyles
+	classesProvider := classesProvider >> #jQueryUI
 ]
 
 { #category : #'*Willow-JQueryUI' }
 ComponentClassificationCommandBuilder >> uiCornerAll [
 
-	^ self commandStyledWith: styleProviderBinding content uiCornerAll
+	^ self commandStyledWith: #uiCornerAll
 ]
 
 { #category : #'*Willow-JQueryUI' }
 ComponentClassificationCommandBuilder >> uiStateDefault [
 
-	^ self commandStyledWith: styleProviderBinding content uiStateDefault
+	^ self commandStyledWith: #uiStateDefault
 ]
 
 { #category : #'*Willow-JQueryUI' }
 ComponentClassificationCommandBuilder >> uiWidget [
 
-	^ self commandStyledWith: styleProviderBinding content uiWidget
+	^ self commandStyledWith: #uiWidget
 ]
 
 { #category : #'*Willow-JQueryUI' }
 ComponentClassificationCommandBuilder >> uiWidgetContent [
 
-	^ self commandStyledWith: styleProviderBinding content uiWidgetContent
+	^ self commandStyledWith: #uiWidgetContent
 ]
 
 { #category : #'*Willow-JQueryUI' }
 ComponentClassificationCommandBuilder >> uiWidgetHeader [
 
-	^ self commandStyledWith: styleProviderBinding content uiWidgetHeader
+	^ self commandStyledWith: #uiWidgetHeader
 ]

@@ -14,7 +14,7 @@ Class {
 ComponentVisibilityTogglingCommandTest >> setUp [
 
 	super setUp.
-	command := ComponentVisibilityTogglingCommand for: WillowCssStyles willow using: #bounce
+	command := ComponentVisibilityTogglingCommand for: Willow classes >> #willow using: #bounce
 ]
 
 { #category : #'tests-accessing' }

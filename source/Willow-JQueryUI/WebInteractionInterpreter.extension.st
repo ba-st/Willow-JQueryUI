@@ -12,7 +12,7 @@ WebInteractionInterpreter >> showJQueryUILoadingNotification [
 	| classes |
 
 	classes := Array
-		with: WillowCssStyles topPageNotification
+		with: Willow classes >> #topPageNotification
 		with: JQueryUICssStyles uiStateFocus
 		with: JQueryUICssStyles uiWidget
 		with: JQueryUICssStyles uiWidgetHeader
