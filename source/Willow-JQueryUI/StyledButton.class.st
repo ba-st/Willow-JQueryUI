@@ -28,8 +28,8 @@ StyledButton >> initializeDescribedBy: aDescription styledAs: aCssStyle [
 				toStyleWithAll:
 					(OrderedCollection new
 						add: aCssStyle;
-						add: JQueryUICssStyles uiWidgetContent;
-						add: JQueryUICssStyles uiCornerAll;
+						add: Willow classes >> #jQueryUI >> #uiWidgetContent;
+						add: Willow classes >> #jQueryUI >> #uiCornerAll;
 						yourself)).
 	interactionInterpreter := WebInteractionInterpreter forClickOnComponent
 ]
