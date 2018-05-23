@@ -10,6 +10,12 @@ Class {
 	#category : 'Willow-JQueryUI-Frontend'
 }
 
+{ #category : #'class initialization' }
+JQueryUIComponentSupplier class >> initialize [
+
+	Willow classes bind: #topPageNotification to: 'willow-top-page-notification'
+]
+
 { #category : #'instance creation' }
 JQueryUIComponentSupplier class >> online [
 
