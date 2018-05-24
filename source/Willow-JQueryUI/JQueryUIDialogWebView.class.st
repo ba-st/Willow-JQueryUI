@@ -120,9 +120,5 @@ JQueryUIDialogWebView >> onTrigger [
 { #category : #rendering }
 JQueryUIDialogWebView >> renderContentOn: aCanvas [
 
-	| component |
-
-	component := aCanvas div.
-	commandToComponent applyTo: component on: aCanvas.
-	component with: contentsView
+	aCanvas div with: contentsView applying: commandToComponent
 ]
