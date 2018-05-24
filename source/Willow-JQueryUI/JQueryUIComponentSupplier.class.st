@@ -7,14 +7,17 @@ Class {
 	#instVars : [
 		'jQueryUILibraries'
 	],
-	#category : 'Willow-JQueryUI-Frontend'
+	#pools : [
+		'Willow'
+	],
+	#category : #'Willow-JQueryUI-Frontend'
 }
 
 { #category : #'class initialization' }
 JQueryUIComponentSupplier class >> initialize [
 
 	<ignoreForCoverage>
-	Willow classification bind: #topPageNotification to: 'willow-top-page-notification'.
+	Classification bind: #topPageNotification to: 'willow-top-page-notification'.
 	self initializeJQueryUIClasses
 ]
 
@@ -22,7 +25,7 @@ JQueryUIComponentSupplier class >> initialize [
 JQueryUIComponentSupplier class >> initializeDialogClasses [
 
 	<ignoreForCoverage>
-	Willow classification >> #jQueryUI
+	Classification >> #jQueryUI
 		bind: #uiDialog to: 'ui-dialog';
 		bind: #uiDialogButtonset to: 'ui-dialog-buttonset';
 		bind: #uiDialogContent to: 'ui-dialog-content'
@@ -32,7 +35,7 @@ JQueryUIComponentSupplier class >> initializeDialogClasses [
 JQueryUIComponentSupplier class >> initializeIconsClasses [
 
 	<ignoreForCoverage>
-	Willow classification >> #jQueryUI
+	Classification >> #jQueryUI
 		bind: #uiIconSeekNext to: 'ui-icon-seek-next';
 		bind: #uiIconArrowthick1W to: 'ui-icon-arrowthick-1-w';
 		bind: #uiIconSeekPrev to: 'ui-icon-seek-prev';
@@ -54,8 +57,8 @@ JQueryUIComponentSupplier class >> initializeIconsClasses [
 JQueryUIComponentSupplier class >> initializeJQueryUIClasses [
 
 	<ignoreForCoverage>
-	Willow classification bind: #jQueryUI to: Namespace new.
-	(Willow classification >> #jQueryUI)
+	Classification bind: #jQueryUI to: Namespace new.
+	(Classification >> #jQueryUI)
 		bind: #uiIcon to: 'ui-icon';
 		bind: #uiCornerLeft to: 'ui-corner-left';
 		bind: #uiWidget to: 'ui-widget';
@@ -96,7 +99,7 @@ JQueryUIComponentSupplier class >> withJQueryUILibrary: aJQueryUILibrary [
 { #category : #Interaction }
 JQueryUIComponentSupplier >> addStatementsTo: aJSScript toCloseDialogsIn: jQueryMatchingDialogContainer matching: dialogSupplier on: aCanvas [
 
-	aJSScript << (dialogSupplier value: (aCanvas jQuery class: Willow classification >> #jQueryUI >> #uiDialogContent)) dialog close
+	aJSScript << (dialogSupplier value: (aCanvas jQuery class: self jQueryUI >> #uiDialogContent)) dialog close
 ]
 
 { #category : #Supplying }
@@ -116,7 +119,7 @@ JQueryUIComponentSupplier >> borderedWidgetCssStyles [
 
 	^ OrderedCollection new
 		addAll: self widgetCssStyles;
-		add: Willow classification >> #jQueryUI >> #uiCornerAll;
+		add: self jQueryUI >> #uiCornerAll;
 		yourself
 ]
 
@@ -208,6 +211,12 @@ JQueryUIComponentSupplier >> interactiveButtonDescribedBy: aDescription represen
 		evaluating: [  ]
 ]
 
+{ #category : #'accessing - private' }
+JQueryUIComponentSupplier >> jQueryUI [
+
+	^ Classification >> #jQueryUI
+]
+
 { #category : #Supplying }
 JQueryUIComponentSupplier >> multiLineTextFieldApplying: aComponentCommand [
 
@@ -289,7 +298,7 @@ JQueryUIComponentSupplier >> updateRoot: aRoot [
 JQueryUIComponentSupplier >> widgetCssStyles [
 
 	^ OrderedCollection new
-		add: Willow classification >> #jQueryUI >> #uiWidget;
-		add: Willow classification >> #jQueryUI >> #uiWidgetContent;
+		add: self jQueryUI >> #uiWidget;
+		add: self jQueryUI >> #uiWidgetContent;
 		yourself
 ]

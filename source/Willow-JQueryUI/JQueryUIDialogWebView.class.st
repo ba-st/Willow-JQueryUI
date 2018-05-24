@@ -12,7 +12,10 @@ Class {
 		'commandToComponent',
 		'acceptButtonOptional'
 	],
-	#category : 'Willow-JQueryUI-WebViews'
+	#pools : [
+		'Willow'
+	],
+	#category : #'Willow-JQueryUI-WebViews'
 }
 
 { #category : #'instance creation' }
@@ -84,7 +87,7 @@ JQueryUIDialogWebView >> dialogScriptOn: aCanvas [
 JQueryUIDialogWebView >> functionToRemoveComponentOn: aCanvas [
 
 	^ aCanvas jQuery this remove
-		, ((aCanvas jQuery id: Willow constants >> #willow >> #dialogSectionName) html: [ :aSubCanvas |  ])
+		, ((aCanvas jQuery id: Constants >> #willow >> #dialogSectionName) html: [ :aSubCanvas |  ])
 ]
 
 { #category : #initialization }

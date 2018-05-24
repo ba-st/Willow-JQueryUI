@@ -7,14 +7,17 @@ Class {
 	#instVars : [
 		'command'
 	],
-	#category : 'Willow-JQueryUI-Tests-WebInteraction'
+	#pools : [
+		'Willow'
+	],
+	#category : #'Willow-JQueryUI-Tests-WebInteraction'
 }
 
 { #category : #initialization }
 ComponentVisibilityTogglingCommandTest >> setUp [
 
 	super setUp.
-	command := ComponentVisibilityTogglingCommand for: Willow classification >> #willow using: #bounce
+	command := ComponentVisibilityTogglingCommand for: Classification >> #willow using: #bounce
 ]
 
 { #category : #'tests-accessing' }
