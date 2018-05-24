@@ -14,7 +14,7 @@ Class {
 JQueryUIComponentSupplier class >> initialize [
 
 	<ignoreForCoverage>
-	Willow classes bind: #topPageNotification to: 'willow-top-page-notification'.
+	Willow classification bind: #topPageNotification to: 'willow-top-page-notification'.
 	self initializeJQueryUIClasses
 ]
 
@@ -22,7 +22,7 @@ JQueryUIComponentSupplier class >> initialize [
 JQueryUIComponentSupplier class >> initializeDialogClasses [
 
 	<ignoreForCoverage>
-	Willow classes >> #jQueryUI
+	Willow classification >> #jQueryUI
 		bind: #uiDialog to: 'ui-dialog';
 		bind: #uiDialogButtonset to: 'ui-dialog-buttonset';
 		bind: #uiDialogContent to: 'ui-dialog-content'
@@ -32,7 +32,7 @@ JQueryUIComponentSupplier class >> initializeDialogClasses [
 JQueryUIComponentSupplier class >> initializeIconsClasses [
 
 	<ignoreForCoverage>
-	Willow classes >> #jQueryUI
+	Willow classification >> #jQueryUI
 		bind: #uiIconSeekNext to: 'ui-icon-seek-next';
 		bind: #uiIconArrowthick1W to: 'ui-icon-arrowthick-1-w';
 		bind: #uiIconSeekPrev to: 'ui-icon-seek-prev';
@@ -54,8 +54,8 @@ JQueryUIComponentSupplier class >> initializeIconsClasses [
 JQueryUIComponentSupplier class >> initializeJQueryUIClasses [
 
 	<ignoreForCoverage>
-	Willow classes bind: #jQueryUI to: Namespace new.
-	(Willow classes >> #jQueryUI)
+	Willow classification bind: #jQueryUI to: Namespace new.
+	(Willow classification >> #jQueryUI)
 		bind: #uiIcon to: 'ui-icon';
 		bind: #uiCornerLeft to: 'ui-corner-left';
 		bind: #uiWidget to: 'ui-widget';
@@ -96,7 +96,7 @@ JQueryUIComponentSupplier class >> withJQueryUILibrary: aJQueryUILibrary [
 { #category : #Interaction }
 JQueryUIComponentSupplier >> addStatementsTo: aJSScript toCloseDialogsIn: jQueryMatchingDialogContainer matching: dialogSupplier on: aCanvas [
 
-	aJSScript << (dialogSupplier value: (aCanvas jQuery class: Willow classes >> #jQueryUI >> #uiDialogContent)) dialog close
+	aJSScript << (dialogSupplier value: (aCanvas jQuery class: Willow classification >> #jQueryUI >> #uiDialogContent)) dialog close
 ]
 
 { #category : #Supplying }
@@ -116,7 +116,7 @@ JQueryUIComponentSupplier >> borderedWidgetCssStyles [
 
 	^ OrderedCollection new
 		addAll: self widgetCssStyles;
-		add: Willow classes >> #jQueryUI >> #uiCornerAll;
+		add: Willow classification >> #jQueryUI >> #uiCornerAll;
 		yourself
 ]
 
@@ -289,7 +289,7 @@ JQueryUIComponentSupplier >> updateRoot: aRoot [
 JQueryUIComponentSupplier >> widgetCssStyles [
 
 	^ OrderedCollection new
-		add: Willow classes >> #jQueryUI >> #uiWidget;
-		add: Willow classes >> #jQueryUI >> #uiWidgetContent;
+		add: Willow classification >> #jQueryUI >> #uiWidget;
+		add: Willow classification >> #jQueryUI >> #uiWidgetContent;
 		yourself
 ]
