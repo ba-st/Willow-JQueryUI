@@ -7,8 +7,76 @@ Class {
 	#instVars : [
 		'jQueryUILibraries'
 	],
-	#category : 'Willow-JQueryUI-Frontend'
+	#pools : [
+		'Willow'
+	],
+	#category : #'Willow-JQueryUI-Frontend'
 }
+
+{ #category : #'class initialization' }
+JQueryUIComponentSupplier class >> initialize [
+
+	<ignoreForCoverage>
+	Classification bind: #topPageNotification to: 'willow-top-page-notification'.
+	self initializeJQueryUIClasses
+]
+
+{ #category : #'class initialization' }
+JQueryUIComponentSupplier class >> initializeDialogClasses [
+
+	<ignoreForCoverage>
+	Classification >> #jQueryUI
+		bind: #uiDialog to: 'ui-dialog';
+		bind: #uiDialogButtonset to: 'ui-dialog-buttonset';
+		bind: #uiDialogContent to: 'ui-dialog-content'
+]
+
+{ #category : #'class initialization' }
+JQueryUIComponentSupplier class >> initializeIconsClasses [
+
+	<ignoreForCoverage>
+	Classification >> #jQueryUI
+		bind: #uiIconSeekNext to: 'ui-icon-seek-next';
+		bind: #uiIconArrowthick1W to: 'ui-icon-arrowthick-1-w';
+		bind: #uiIconSeekPrev to: 'ui-icon-seek-prev';
+		bind: #uiIconStar to: 'ui-icon-star';
+		bind: #uiIconComment to: 'ui-icon-comment';
+		bind: #uiIconCheck to: 'ui-icon-check';
+		bind: #uiIconArrowthick1S to: 'ui-icon-arrowthick-1-s';
+		bind: #uiIconClosethick to: 'ui-icon-closethick';
+		bind: #uiIconPencil to: 'ui-icon-pencil';
+		bind: #uiIconCancel to: 'ui-icon-cancel';
+		bind: #uiIconMinusthick to: 'ui-icon-minusthick';
+		bind: #uiIconPlus to: 'ui-icon-plus';
+		bind: #uiIconPlusthick to: 'ui-icon-plusthick';
+		bind: #uiIconArrowthick1E to: 'ui-icon-arrowthick-1-e';
+		bind: #uiIconClose to: 'ui-icon-close'
+]
+
+{ #category : #'class initialization' }
+JQueryUIComponentSupplier class >> initializeJQueryUIClasses [
+
+	<ignoreForCoverage>
+	Classification bind: #jQueryUI to: Namespace new.
+	(Classification >> #jQueryUI)
+		bind: #uiIcon to: 'ui-icon';
+		bind: #uiCornerLeft to: 'ui-corner-left';
+		bind: #uiWidget to: 'ui-widget';
+		bind: #uiCornerAll to: 'ui-corner-all';
+		bind: #uiStateFocus to: 'ui-state-focus';
+		bind: #uiWidgetHeader to: 'ui-widget-header';
+		bind: #uiStateDefault to: 'ui-state-default';
+		bind: #uiStateHover to: 'ui-state-hover';
+		bind: #uiFront to: 'ui-front';
+		bind: #uiHelperClearfix to: 'ui-helper-clearfix';
+		bind: #uiButtonIconPrimary to: 'ui-button-icon-primary';
+		bind: #uiWidgetContent to: 'ui-widget-content';
+		bind: #uiStateHighlight to: 'ui-state-highlight';
+		bind: #uiButton to: 'ui-button'.
+	self
+		initializeDialogClasses;
+		initializeIconsClasses
+]
 
 { #category : #'instance creation' }
 JQueryUIComponentSupplier class >> online [
@@ -31,7 +99,7 @@ JQueryUIComponentSupplier class >> withJQueryUILibrary: aJQueryUILibrary [
 { #category : #Interaction }
 JQueryUIComponentSupplier >> addStatementsTo: aJSScript toCloseDialogsIn: jQueryMatchingDialogContainer matching: dialogSupplier on: aCanvas [
 
-	aJSScript << (dialogSupplier value: (aCanvas jQuery class: JQueryUICssStyles uiDialogContent)) dialog close
+	aJSScript << (dialogSupplier value: (aCanvas jQuery class: self jQueryUI >> #uiDialogContent)) dialog close
 ]
 
 { #category : #Supplying }
@@ -51,7 +119,7 @@ JQueryUIComponentSupplier >> borderedWidgetCssStyles [
 
 	^ OrderedCollection new
 		addAll: self widgetCssStyles;
-		add: JQueryUICssStyles uiCornerAll;
+		add: self jQueryUI >> #uiCornerAll;
 		yourself
 ]
 
@@ -143,6 +211,12 @@ JQueryUIComponentSupplier >> interactiveButtonDescribedBy: aDescription represen
 		evaluating: [  ]
 ]
 
+{ #category : #'accessing - private' }
+JQueryUIComponentSupplier >> jQueryUI [
+
+	^ Classification >> #jQueryUI
+]
+
 { #category : #Supplying }
 JQueryUIComponentSupplier >> multiLineTextFieldApplying: aComponentCommand [
 
@@ -224,7 +298,7 @@ JQueryUIComponentSupplier >> updateRoot: aRoot [
 JQueryUIComponentSupplier >> widgetCssStyles [
 
 	^ OrderedCollection new
-		add: JQueryUICssStyles uiWidget;
-		add: JQueryUICssStyles uiWidgetContent;
+		add: self jQueryUI >> #uiWidget;
+		add: self jQueryUI >> #uiWidgetContent;
 		yourself
 ]

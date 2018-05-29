@@ -5,10 +5,10 @@ Class {
 	#name : #StyledButton,
 	#superclass : #WAPainter,
 	#instVars : [
-		'commandsToComponent',
-		'interactionInterpreter'
+		'interactionInterpreter',
+		'commandToComponent'
 	],
-	#category : 'Willow-JQueryUI-WebViews'
+	#category : #'Willow-JQueryUI-WebViews'
 }
 
 { #category : #'instance creation' }
@@ -20,17 +20,7 @@ StyledButton class >> describedBy: aDescription styledAs: aCssStyle [
 { #category : #initialization }
 StyledButton >> initializeDescribedBy: aDescription styledAs: aCssStyle [
 
-	commandsToComponent := OrderedCollection new.
-	commandsToComponent add: (ComponentTitleCommand toSet: aDescription).
-	commandsToComponent
-		add:
-			(ComponentClassificationCommand
-				toStyleWithAll:
-					(OrderedCollection new
-						add: aCssStyle;
-						add: JQueryUICssStyles uiWidgetContent;
-						add: JQueryUICssStyles uiCornerAll;
-						yourself)).
+	commandToComponent := [ :button | (button setTitleTo: aDescription) + (ComponentClassificationCommand toStyleWith: aCssStyle) + button addClass jQueryUI uiWidgetContent + button addClass jQueryUI uiCornerAll ].
 	interactionInterpreter := WebInteractionInterpreter forClickOnComponent
 ]
 
@@ -43,11 +33,9 @@ StyledButton >> onTrigger [
 { #category : #rendering }
 StyledButton >> renderContentOn: aCanvas [
 
-	"El orden es importante para que funcione!"
+	"The message order is important to make it work!"
 
-	| component |
-
-	component := aCanvas button.
-	interactionInterpreter applyTo: component on: aCanvas.
-	commandsToComponent do: [ :command | command applyTo: component on: aCanvas ]
+	aCanvas button
+		interactUsing: interactionInterpreter;
+		apply: commandToComponent
 ]

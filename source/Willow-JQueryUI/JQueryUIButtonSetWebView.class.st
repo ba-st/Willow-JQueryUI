@@ -38,21 +38,15 @@ JQueryUIButtonSetWebView >> onTrigger [
 { #category : #rendering }
 JQueryUIButtonSetWebView >> renderContentOn: aCanvas [
 
-	| component |
-
-	component := self renderedComponentOn: aCanvas.
-	commandToComponent applyTo: component on: aCanvas.
-	component with: [ self renderRadioGroupOn: aCanvas ]
+	(self renderedComponentOn: aCanvas) with: [ self renderRadioGroupOn: aCanvas ] applying: commandToComponent
 ]
 
 { #category : #'private-rendering' }
 JQueryUIButtonSetWebView >> renderLabelFor: anElement representedBy: radioButton identifiedAs: radioButtonId on: aCanvas [
 
-	| label |
-
-	label := aCanvas label.
-	(elementCommandProvider value: anElement) applyTo: label on: aCanvas.
-	label for: radioButtonId
+	aCanvas label
+		apply: (elementCommandProvider value: anElement);
+		for: radioButtonId
 ]
 
 { #category : #'private-rendering' }
@@ -66,7 +60,7 @@ JQueryUIButtonSetWebView >> renderRadioButtonFor: anElement asPartOf: aRadioGrou
 		for: anElement
 		asPartOf: aRadioGroup
 		on: aCanvas.
-	interactionInterpreter applyTo: radioButton on: aCanvas.
+	radioButton interactUsing: interactionInterpreter.
 	self
 		renderLabelFor: anElement
 		representedBy: radioButton

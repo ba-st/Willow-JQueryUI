@@ -8,7 +8,10 @@ Class {
 		'okButton',
 		'cancelButton'
 	],
-	#category : 'Willow-JQueryUI-Tests-WebInteraction'
+	#pools : [
+		'Willow'
+	],
+	#category : #'Willow-JQueryUI-Tests-WebInteraction'
 }
 
 { #category : #initialization }
@@ -29,10 +32,7 @@ JQueryUIWebInteractionInterpreterTest >> testCombinedToggleCssClassOnComponentsW
 			{okButton.
 			cancelButton}.
 
-	interpreter
-		toggleCssClass: WillowCssStyles loading
-		onComponentsWithClass: WillowCssStyles willow
-		withEffect: #bounce.
+	interpreter toggleCssClass: Classification >> #loading onComponentsWithClass: Classification >> #willow withEffect: #bounce.
 
 	html := self
 		renderUsing: [ :canvas | 
@@ -51,13 +51,8 @@ JQueryUIWebInteractionInterpreterTest >> testToggleCssClassOnComponentsWithClass
 	| interpreter html |
 
 	interpreter := WebInteractionInterpreter forClickOnComponent.
-	interpreter
-		toggleCssClass: WillowCssStyles loading
-		onComponentsWithClass: WillowCssStyles willow
-		withEffect: #bounce.
-	html := self
-		apply: interpreter
-		toComponentDefinedBy: [ :canvas | canvas textInput class: WillowCssStyles willow ].
+	interpreter toggleCssClass: Classification >> #loading onComponentsWithClass: Classification >> #willow withEffect: #bounce.
+	html := self apply: interpreter toComponentDefinedBy: [ :canvas | canvas textInput apply: [ :input | input addClass willow ] ].
 	self
 		assert: html
 		equals:
