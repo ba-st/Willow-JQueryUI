@@ -3,7 +3,7 @@ Extension { #name : #ComponentClassificationCommandBuilder }
 { #category : #'*Willow-JQueryUI' }
 ComponentClassificationCommandBuilder >> jQueryUI [
 
-	classesProvider := classesProvider >> #jQueryUI
+	classificationNamespace := classificationNamespace >> #jQueryUI
 ]
 
 { #category : #'*Willow-JQueryUI' }
