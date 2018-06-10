@@ -23,7 +23,7 @@ JQueryUIButtonCommand class >> representedBy: anIcon [
 		toExecute: [ :canvas | 
 			canvas jQuery this button
 				text: false;
-				primaryIcon: anIcon ]
+				primaryIcon: Classification >> #jQueryUI >> anIcon ]
 ]
 
 { #category : #'instance creation - private' }
