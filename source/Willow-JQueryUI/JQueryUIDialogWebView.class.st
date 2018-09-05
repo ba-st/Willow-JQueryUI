@@ -50,7 +50,7 @@ JQueryUIDialogWebView >> configureAcceptButton [
 
 	self onTrigger
 		serializeChildForm;
-		executeOnClient: [ :aScript :canvas | aScript << (self functionToRemoveComponentOn: canvas) ]
+		executeOnClient: [ :canvas | self functionToRemoveComponentOn: canvas ]
 ]
 
 { #category : #'private - configuring' }
