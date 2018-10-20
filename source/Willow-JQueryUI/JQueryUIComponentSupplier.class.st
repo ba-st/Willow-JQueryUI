@@ -232,6 +232,14 @@ JQueryUIComponentSupplier >> multipleSelectionListBoxDisplayingAtOnce: aNumberOf
 ]
 
 { #category : #Supplying }
+JQueryUIComponentSupplier >> naturalNumberFieldApplying: aComponentCommand [
+
+	^ NumberFieldWebView
+		applying: [ :field | field boundNotNegative + aComponentCommand ]
+		transformingWith: NaturalNumberCodec new
+]
+
+{ #category : #Supplying }
 JQueryUIComponentSupplier >> radioRenderingWith: aRenderingBlock applyingToLabel: aCommandToLabel applyingToInput: aCommandToInput [
 
 	^RadioGroupWebView 
