@@ -9,32 +9,49 @@ BaselineOfWillowJQueryUI >> baseline: spec [
 
 	<baseline>
 	spec
-		for: #common
-		do: [ self setUpDependencies: spec.
+		for: #pharo
+		do: [ self
+				setUpDependencies: spec;
+				baselineWillowJQueryUI: spec.
 			spec
 				package: 'Willow-JQueryUI' with: [ spec requires: #('Seaside3' 'Willow') ];
-				package: 'Willow-JQueryUI-Tests'
-					with: [ spec requires: #('Willow-JQueryUI' 'Willow-Tests') ].
+				package: 'Willow-JQueryUI-Tests' with: [ spec requires: #('Willow-JQueryUI' 'Willow-Tests') ].
 			spec
-				group: 'Deployment' with: #('Willow-JQueryUI');
-				group: 'Development' with: #('Deployment' 'Willow-JQueryUI-Tests');
-				group: 'default' with: #('Deployment') ]
+				group: 'CI' with: 'Tests';
+				group: 'Dependent-SUnit-Extensions' with: 'Willow-SUnit';
+				group: 'Tools' with: 'Willow-Tools';
+				group: 'Development' with: #('Tests' 'Tools')
+			]
+]
+
+{ #category : #baselines }
+BaselineOfWillowJQueryUI >> baselineWillowJQueryUI: spec [
+
+	spec
+		package: 'Willow-JQueryUI' with: [ spec requires: #('Seaside3-JQueryUI' 'Willow-Deployment') ];
+		group: 'Deployment' with: 'Willow-JQueryUI';
+		package: 'Willow-JQueryUI-Tests' with: [ spec requires: #('Willow-JQueryUI' 'Willow-SUnit') ];
+		group: 'Tests' with: 'Willow-JQueryUI-Tests'
+]
+
+{ #category : #accessing }
+BaselineOfWillowJQueryUI >> projectClass [
+
+	^ MetacelloCypressBaselineProject
 ]
 
 { #category : #baselines }
 BaselineOfWillowJQueryUI >> setUpDependencies: spec [
 
 	spec
-		baseline: 'Seaside3'
-		with: [ spec
-				repository: 'github://SeasideSt/Seaside:v3.2.4/repository';
-				loads: #('JQuery-UI') ].
+		baseline: 'Seaside3' with: [ spec repository: 'github://SeasideSt/Seaside:v3.3.1/repository' ];
+		project: 'Seaside3-JQueryUI'
+			copyFrom: 'Seaside3'
+			with: [ spec loads: #('Core' 'Javascript' 'JQuery' 'JQuery-UI') ].
 
 	spec
-		baseline: 'Willow'
-			with: [ spec
-				repository: 'github://ba-st/Willow:v11/source';
-				loads: #('Willow') ];
-		project: 'Willow-Tests' copyFrom: 'Willow' with: [ spec loads: #('Willow-Tests') ]
-
+		baseline: 'Willow' with: [ spec repository: 'github://ba-st/Willow:v11/source' ];
+		project: 'Willow-Deployment' copyFrom: 'Willow' with: [ spec loads: 'Deployment' ];
+		project: 'Willow-SUnit' copyFrom: 'Willow' with: [ spec loads: 'Dependent-SUnit-Extensions' ];
+		project: 'Willow-Tools' copyFrom: 'Willow' with: [ spec loads: 'Tools' ]
 ]

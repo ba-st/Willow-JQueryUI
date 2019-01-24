@@ -46,7 +46,7 @@ JQueryUIComponentSupplierTest >> testCheckboxLabeledOnModelOffModelApplying [
 				offModel: 'the off'
 				applying: [ :checkbox | checkbox addClass willow ] ]
 		equals:
-			'<input class="willow" checked="checked" name="1" id="checkbox-id2" type="checkbox"/><input name="3" type="hidden"/><label for="checkbox-id2">Labelization</label>'
+			'<input class="willow" checked name="1" id="checkbox-id2" type="checkbox"/><input name="3" type="hidden"/><label for="checkbox-id2">Labelization</label>'
 ]
 
 { #category : #'tests-Supplying' }
@@ -59,7 +59,7 @@ JQueryUIComponentSupplierTest >> testCheckboxUnlabeledOnModelOffModelApplying [
 				offModel: 'the off'
 				applying: [ :checkbox | checkbox addClass willow ] ]
 		equals:
-			'<input class="willow" checked="checked" name="1" type="checkbox"/><input name="2" type="hidden"/>'
+			'<input class="willow" checked name="1" type="checkbox"/><input name="2" type="hidden"/>'
 ]
 
 { #category : #'tests-Supplying' }
@@ -90,7 +90,7 @@ JQueryUIComponentSupplierTest >> testFieldSetContainingApplyingWithLegendApplyin
 				withLegend: 'Its Title'
 				applying: [ :legend | legend beAutofocused ] ]
 		equals:
-			'<fieldset disabled="disabled"><legend autofocus="autofocus">Its Title</legend>The View</fieldset>'
+			'<fieldset disabled><legend autofocus>Its Title</legend>The View</fieldset>'
 ]
 
 { #category : #'tests-Supplying' }
@@ -108,7 +108,7 @@ JQueryUIComponentSupplierTest >> testMultipleSelectionListBoxDisplayingAtOnceApp
 	self
 		assertRenderingOf:
 			[ :supplier | supplier multipleSelectionListBoxDisplayingAtOnce: 10 applying: [ :listBox |  ] ]
-		equals: '<select name="1" size="10" multiple="multiple"></select><input name="2" type="hidden"/>'
+		equals: '<select name="1" size="10" multiple></select><input name="2" type="hidden"/>'
 ]
 
 { #category : #'tests-Supplying' }
