@@ -14,9 +14,6 @@ BaselineOfWillowJQueryUI >> baseline: spec [
 				setUpDependencies: spec;
 				baselineWillowJQueryUI: spec.
 			spec
-				package: 'Willow-JQueryUI' with: [ spec requires: #('Seaside3' 'Willow') ];
-				package: 'Willow-JQueryUI-Tests' with: [ spec requires: #('Willow-JQueryUI' 'Willow-Tests') ].
-			spec
 				group: 'CI' with: 'Tests';
 				group: 'Dependent-SUnit-Extensions' with: 'Willow-SUnit';
 				group: 'Tools' with: 'Willow-Tools';
