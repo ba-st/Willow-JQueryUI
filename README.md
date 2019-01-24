@@ -1,36 +1,38 @@
-![Logo](resources/logos/128x128.png) Willow-JQueryUI
-======
-![GitHub release](https://img.shields.io/github/release/ba-st/Willow-JQueryUI.svg)
-[![Build Status](https://travis-ci.org/ba-st/Willow-JQueryUI.svg?branch=master)](https://travis-ci.org/ba-st/Willow-JQueryUI)
-[![Coverage Status](https://coveralls.io/repos/github/ba-st/Willow-JQueryUI/badge.svg?branch=master)](https://coveralls.io/github/ba-st/Willow-JQueryUI?branch=master)
+<p align="center"><img src="assets/logos/128x128.png">
+ <h1 align="center">Willow-JQueryUI</h1>
+  <p align="center">
+    Willow JQueryUI provides integration between <a href="https://github.com/ba-st/Willow">Willow</a> and <a href="http://jqueryui.com/">JQueryUI</a>
+    <br>
+    <a href="docs/"><strong>Explore the docs »</strong></a>
+    <br>
+    <br>
+    <a href="https://github.com/ba-st/Willow-JQueryUI/issues/new?labels=Type%3A+Defect">Report a defect</a>
+    |
+    <a href="https://github.com/ba-st/Willow-JQueryUI/issues/new?labels=Type%3A+Feature">Request feature</a>
+  </p>
+</p>
+
+[![GitHub release](https://img.shields.io/github/release/ba-st/Willow-JQueryUI.svg)](https://github.com/ba-st/Willow-JQueryUI/releases/latest)
+[![Build Status](https://travis-ci.org/ba-st/Willow-JQueryUI.svg?branch=release-candidate)](https://travis-ci.org/ba-st/Willow-JQueryUI)
+[![Coverage Status](https://coveralls.io/repos/github/ba-st/Willow-JQueryUI/badge.svg?branch=release-candidate)](https://coveralls.io/github/ba-st/Willow-JQueryUI?branch=release-candidate)
 [![Javascript Dependency Status](https://david-dm.org/ba-st/Willow-JQueryUI.svg)](https://david-dm.org/ba-st/Willow-JQueryUI)
 
-*Willow JQueryUI provides integration between [Willow](https://github.com/ba-st/Willow) and [JQueryUI](http://jqueryui.com/)*
+The project goal is to complement Willow with a component supplier that allows the creation of JQuery UI applications.
 
-## Goals
-- Complement Willow with a component supplier that allows the creation of JQuery UI applications
+## License
+- The code is licensed under [MIT](LICENSE).
+- The documentation is licensed under [CC BY-SA 4.0](http://creativecommons.org/licenses/by-sa/4.0/).
 
-### License:
-The project source code is [MIT](LICENSE) licensed. Any contribution submitted to the code repository is considered to be under the same license.
+## Quick Start
 
-The documentation is licensed under a [Creative Commons Attribution-ShareAlike 4.0 International License](http://creativecommons.org/licenses/by-sa/4.0/)
+- Download the latest [Pharo 32](https://get.pharo.org/) or [64 bits VM](https://get.pharo.org/64/).
+- Download a ready to use image from the [release page](https://github.com/ba-st/Willow-JQueryUI/releases/latest)
+- Explore the [documentation](docs/)
 
-### Highlights:
-- **Supported Platforms**: [Pharo 5 / Pharo 6](http://www.pharo.org/)
-- **Source Code Repository** and **Issue Tracking**: In this GitHub repository.
+## Installation
 
-### Get started!
+To load the project in a Pharo image, or declare it as a dependency of your own project follow this [instructions](docs/Installation.md).
 
-#### Pharo 6.1/7
+## Contributing
 
-Open a Playground and evaluate:
-
-```smalltalk
-Metacello new
-  baseline: 'WillowJQueryUI';
-  repository: 'github://ba-st/Willow-JQueryUI:master/source';
-  load
-```
-
-### Contributing
-If you want to help check the ["How to contribute" doc](CONTRIBUTING.md).
+Check the [Contribution Guidelines](CONTRIBUTING.md)
