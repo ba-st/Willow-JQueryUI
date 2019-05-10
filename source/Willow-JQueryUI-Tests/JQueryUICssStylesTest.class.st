@@ -1,6 +1,6 @@
 Class {
 	#name : #JQueryUICssStylesTest,
-	#superclass : #WARenderingTest,
+	#superclass : #BWRenderingTest,
 	#pools : [
 		'Willow'
 	],

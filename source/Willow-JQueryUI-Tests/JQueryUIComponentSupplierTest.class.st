@@ -1,6 +1,6 @@
 Class {
 	#name : #JQueryUIComponentSupplierTest,
-	#superclass : #WARenderingTest,
+	#superclass : #BWRenderingTest,
 	#category : 'Willow-JQueryUI-Tests-Frontend'
 }
 

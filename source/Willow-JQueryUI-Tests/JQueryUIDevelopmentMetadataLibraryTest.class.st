@@ -1,6 +1,6 @@
 Class {
 	#name : #JQueryUIDevelopmentMetadataLibraryTest,
-	#superclass : #WARenderingTest,
+	#superclass : #BWRenderingTest,
 	#category : 'Willow-JQueryUI-Tests-Libraries'
 }
 

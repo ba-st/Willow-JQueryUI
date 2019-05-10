@@ -1,6 +1,6 @@
 Class {
 	#name : #JQueryUIDialogBuilderTest,
-	#superclass : #WARenderingTest,
+	#superclass : #BWRenderingTest,
 	#category : #'Willow-JQueryUI-Tests-WebViews'
 }
 
