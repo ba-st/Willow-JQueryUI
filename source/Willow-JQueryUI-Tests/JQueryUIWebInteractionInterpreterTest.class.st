@@ -3,7 +3,7 @@ I'm a test for JQuery UI related extensions on WebInteractionInterpreter
 "
 Class {
 	#name : #JQueryUIWebInteractionInterpreterTest,
-	#superclass : #WARenderingTest,
+	#superclass : #BWRenderingTest,
 	#instVars : [
 		'okButton',
 		'cancelButton'

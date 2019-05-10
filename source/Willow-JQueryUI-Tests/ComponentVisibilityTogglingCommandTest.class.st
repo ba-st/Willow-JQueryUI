@@ -3,7 +3,7 @@ A ComponentVisibilityTogglingCommandTest is a test class for testing the behavio
 "
 Class {
 	#name : #ComponentVisibilityTogglingCommandTest,
-	#superclass : #WARenderingTest,
+	#superclass : #BWRenderingTest,
 	#instVars : [
 		'command'
 	],

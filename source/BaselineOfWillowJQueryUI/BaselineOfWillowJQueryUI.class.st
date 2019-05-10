@@ -41,13 +41,13 @@ BaselineOfWillowJQueryUI >> projectClass [
 BaselineOfWillowJQueryUI >> setUpDependencies: spec [
 
 	spec
-		baseline: 'Seaside3' with: [ spec repository: 'github://SeasideSt/Seaside:v3.3.1/repository' ];
+		baseline: 'Seaside3' with: [ spec repository: 'github://SeasideSt/Seaside:v3.3.3/repository' ];
 		project: 'Seaside3-JQueryUI'
 			copyFrom: 'Seaside3'
 			with: [ spec loads: #('Core' 'Javascript' 'JQuery' 'JQuery-UI') ].
 
 	spec
-		baseline: 'Willow' with: [ spec repository: 'github://ba-st/Willow:v11/source' ];
+		baseline: 'Willow' with: [ spec repository: 'github://ba-st/Willow:v12/source' ];
 		project: 'Willow-Deployment' copyFrom: 'Willow' with: [ spec loads: 'Deployment' ];
 		project: 'Willow-SUnit' copyFrom: 'Willow' with: [ spec loads: 'Dependent-SUnit-Extensions' ];
 		project: 'Willow-Tools' copyFrom: 'Willow' with: [ spec loads: 'Tools' ]
