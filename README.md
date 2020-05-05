@@ -13,9 +13,12 @@
 </p>
 
 [![GitHub release](https://img.shields.io/github/release/ba-st/Willow-JQueryUI.svg)](https://github.com/ba-st/Willow-JQueryUI/releases/latest)
-[![Build Status](https://travis-ci.org/ba-st/Willow-JQueryUI.svg?branch=release-candidate)](https://travis-ci.org/ba-st/Willow-JQueryUI)
-[![Coverage Status](https://coveralls.io/repos/github/ba-st/Willow-JQueryUI/badge.svg?branch=release-candidate)](https://coveralls.io/github/ba-st/Willow-JQueryUI?branch=release-candidate)
+[![Build Status](https://github.com/ba-st/Willow-JQueryUI/workflows/Build/badge.svg?branch=release-candidate)](https://github.com/ba-st/Willow-JQueryUI/actions?query=workflow%3ABuild)
+[![Coverage Status](https://codecov.io/github/ba-st/Willow-JQueryUI/coverage.svg?branch=release-candidate)](https://codecov.io/gh/ba-st/Willow-JQueryUI/branch/release-candidate)
 [![Javascript Dependency Status](https://david-dm.org/ba-st/Willow-JQueryUI.svg)](https://david-dm.org/ba-st/Willow-JQueryUI)
+[![Pharo 6.1](https://img.shields.io/badge/Pharo-6.1-informational)](https://pharo.org)
+[![Pharo 7.0](https://img.shields.io/badge/Pharo-7.0-informational)](https://pharo.org)
+[![Pharo 8.0](https://img.shields.io/badge/Pharo-8.0-informational)](https://pharo.org)
 
 The project goal is to complement Willow with a component supplier that allows the creation of JQuery UI applications.
 
