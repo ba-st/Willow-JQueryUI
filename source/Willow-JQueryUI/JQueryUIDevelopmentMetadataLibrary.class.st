@@ -4,14 +4,14 @@ I'm a WALibary serving the files in source form, suitable for development
 Class {
 	#name : #JQueryUIDevelopmentMetadataLibrary,
 	#superclass : #JQueryUIMetadataLibrary,
-	#category : 'Willow-JQueryUI-Libraries'
+	#category : #'Willow-JQueryUI-Libraries'
 }
 
 { #category : #'uploaded metadata' }
 JQueryUIDevelopmentMetadataLibrary >> jqueryuiJs [
 	^ WAFileLibraryResource
 		filepath: 'jquery-ui.js'
-		mimeType: (WAMimeType main: 'application' sub: 'x-javascript')
+		mimeType: (WAMimeType main: 'application' sub: 'javascript')
 		cacheDuration: (Duration days: 0 hours: 0 minutes: 30 seconds: 0)
 		contents: (GRDelayedSend receiver: self selector: #jqueryuiJsContent)
 ]
