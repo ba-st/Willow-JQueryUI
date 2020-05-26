@@ -9,11 +9,17 @@ Class {
 
 { #category : #'uploaded metadata' }
 JQueryUIDeploymentMetadataLibrary >> jqueryuiminJs [
+
 	^ WAFileLibraryResource
 		filepath: 'jquery-ui.min.js'
-		mimeType: (WAMimeType main: 'application' sub: 'javascript')
-		cacheDuration: (Duration days: 0 hours: 0 minutes: 30 seconds: 0)
-		contents: (GRDelayedSend receiver: self selector: #jqueryuiminJsContent)
+		mimeType: WAMimeType applicationJavascript
+		cacheDuration:
+			( Duration
+				days: 0
+				hours: 0
+				minutes: 30
+				seconds: 0 )
+		contents: ( GRDelayedSend receiver: self selector: #jqueryuiminJsContent )
 ]
 
 { #category : #uploaded }
