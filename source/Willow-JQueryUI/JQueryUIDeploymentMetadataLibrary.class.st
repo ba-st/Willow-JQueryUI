@@ -13,12 +13,7 @@ JQueryUIDeploymentMetadataLibrary >> jqueryuiminJs [
 	^ WAFileLibraryResource
 		filepath: 'jquery-ui.min.js'
 		mimeType: WAMimeType applicationJavascript
-		cacheDuration:
-			( Duration
-				days: 0
-				hours: 0
-				minutes: 30
-				seconds: 0 )
+		cacheDuration: self class defaultCacheDuration
 		contents: ( GRDelayedSend receiver: self selector: #jqueryuiminJsContent )
 ]
 
@@ -41,11 +36,12 @@ break;case U[1]-1:I+=" ui-datepicker-group-last",T=" ui-corner-"+(B?"left":"righ
 
 { #category : #'uploaded metadata' }
 JQueryUIDeploymentMetadataLibrary >> jqueryuistructureminCss [
+
 	^ WAFileLibraryResource
 		filepath: 'jquery-ui.structure.min.css'
-		mimeType: (WAMimeType main: 'text' sub: 'css')
-		cacheDuration: (Duration days: 0 hours: 0 minutes: 30 seconds: 0)
-		contents: (GRDelayedSend receiver: self selector: #jqueryuistructureminCssContent)
+		mimeType: ( WAMimeType main: 'text' sub: 'css' )
+		cacheDuration: self class defaultCacheDuration
+		contents: ( GRDelayedSend receiver: self selector: #jqueryuistructureminCssContent )
 ]
 
 { #category : #uploaded }
@@ -59,11 +55,12 @@ JQueryUIDeploymentMetadataLibrary >> jqueryuistructureminCssContent [
 
 { #category : #'uploaded metadata' }
 JQueryUIDeploymentMetadataLibrary >> jqueryuithememinCss [
+
 	^ WAFileLibraryResource
 		filepath: 'jquery-ui.theme.min.css'
-		mimeType: (WAMimeType main: 'text' sub: 'css')
-		cacheDuration: (Duration days: 0 hours: 0 minutes: 30 seconds: 0)
-		contents: (GRDelayedSend receiver: self selector: #jqueryuithememinCssContent)
+		mimeType: ( WAMimeType main: 'text' sub: 'css' )
+		cacheDuration: self class defaultCacheDuration
+		contents: ( GRDelayedSend receiver: self selector: #jqueryuithememinCssContent )
 ]
 
 { #category : #uploaded }

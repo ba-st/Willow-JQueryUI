@@ -13,12 +13,7 @@ JQueryUIDevelopmentMetadataLibrary >> jqueryuiJs [
 	^ WAFileLibraryResource
 		filepath: 'jquery-ui.js'
 		mimeType: WAMimeType applicationJavascript
-		cacheDuration:
-			( Duration
-				days: 0
-				hours: 0
-				minutes: 30
-				seconds: 0 )
+		cacheDuration: self class defaultCacheDuration
 		contents: ( GRDelayedSend receiver: self selector: #jqueryuiJsContent )
 ]
 
@@ -18734,11 +18729,12 @@ var effectsEffectTransfer = effect;
 
 { #category : #'uploaded metadata' }
 JQueryUIDevelopmentMetadataLibrary >> jqueryuistructureCss [
+
 	^ WAFileLibraryResource
 		filepath: 'jquery-ui.structure.css'
-		mimeType: (WAMimeType main: 'text' sub: 'css')
-		cacheDuration: (Duration days: 0 hours: 0 minutes: 30 seconds: 0)
-		contents: (GRDelayedSend receiver: self selector: #jqueryuistructureCssContent)
+		mimeType: ( WAMimeType main: 'text' sub: 'css' )
+		cacheDuration: self class defaultCacheDuration
+		contents: ( GRDelayedSend receiver: self selector: #jqueryuistructureCssContent )
 ]
 
 { #category : #uploaded }
@@ -19634,11 +19630,12 @@ body .ui-tooltip {
 
 { #category : #'uploaded metadata' }
 JQueryUIDevelopmentMetadataLibrary >> jqueryuithemeCss [
+
 	^ WAFileLibraryResource
 		filepath: 'jquery-ui.theme.css'
-		mimeType: (WAMimeType main: 'text' sub: 'css')
-		cacheDuration: (Duration days: 0 hours: 0 minutes: 30 seconds: 0)
-		contents: (GRDelayedSend receiver: self selector: #jqueryuithemeCssContent)
+		mimeType: ( WAMimeType main: 'text' sub: 'css' )
+		cacheDuration: self class defaultCacheDuration
+		contents: ( GRDelayedSend receiver: self selector: #jqueryuithemeCssContent )
 ]
 
 { #category : #uploaded }
