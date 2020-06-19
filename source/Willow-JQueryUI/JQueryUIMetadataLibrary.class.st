@@ -4,7 +4,7 @@ I'm an asbtract WALibary serving the files in source form
 Class {
 	#name : #JQueryUIMetadataLibrary,
 	#superclass : #WADeploymentAwareFileMetadataLibrary,
-	#category : 'Willow-JQueryUI-Libraries'
+	#category : #'Willow-JQueryUI-Libraries'
 }
 
 { #category : #Accessing }
@@ -33,11 +33,12 @@ JQueryUIMetadataLibrary class >> version [
 
 { #category : #'uploaded metadata' }
 JQueryUIMetadataLibrary >> imagesuibgdiagonalmaze206e4f1c10x10Png [
+
 	^ WAFileLibraryResource
 		filepath: 'images/ui-bg_diagonal-maze_20_6e4f1c_10x10.png'
-		mimeType: (WAMimeType main: 'image' sub: 'png')
-		cacheDuration: (Duration days: 0 hours: 0 minutes: 30 seconds: 0)
-		contents: (GRDelayedSend receiver: self selector: #imagesuibgdiagonalmaze206e4f1c10x10PngContent)
+		mimeType: ( WAMimeType main: 'image' sub: 'png' )
+		cacheDuration: self class defaultCacheDuration
+		contents: ( GRDelayedSend receiver: self selector: #imagesuibgdiagonalmaze206e4f1c10x10PngContent )
 ]
 
 { #category : #uploaded }
@@ -47,11 +48,12 @@ JQueryUIMetadataLibrary >> imagesuibgdiagonalmaze206e4f1c10x10PngContent [
 
 { #category : #'uploaded metadata' }
 JQueryUIMetadataLibrary >> imagesuibgdiagonalmaze4000000010x10Png [
+
 	^ WAFileLibraryResource
 		filepath: 'images/ui-bg_diagonal-maze_40_000000_10x10.png'
-		mimeType: (WAMimeType main: 'image' sub: 'png')
-		cacheDuration: (Duration days: 0 hours: 0 minutes: 30 seconds: 0)
-		contents: (GRDelayedSend receiver: self selector: #imagesuibgdiagonalmaze4000000010x10PngContent)
+		mimeType: ( WAMimeType main: 'image' sub: 'png' )
+		cacheDuration: self class defaultCacheDuration
+		contents: ( GRDelayedSend receiver: self selector: #imagesuibgdiagonalmaze4000000010x10PngContent )
 ]
 
 { #category : #uploaded }
@@ -61,11 +63,12 @@ JQueryUIMetadataLibrary >> imagesuibgdiagonalmaze4000000010x10PngContent [
 
 { #category : #'uploaded metadata' }
 JQueryUIMetadataLibrary >> imagesuibgfinegrain10eceadf60x60Png [
+
 	^ WAFileLibraryResource
 		filepath: 'images/ui-bg_fine-grain_10_eceadf_60x60.png'
-		mimeType: (WAMimeType main: 'image' sub: 'png')
-		cacheDuration: (Duration days: 0 hours: 0 minutes: 30 seconds: 0)
-		contents: (GRDelayedSend receiver: self selector: #imagesuibgfinegrain10eceadf60x60PngContent)
+		mimeType: ( WAMimeType main: 'image' sub: 'png' )
+		cacheDuration: self class defaultCacheDuration
+		contents: ( GRDelayedSend receiver: self selector: #imagesuibgfinegrain10eceadf60x60PngContent )
 ]
 
 { #category : #uploaded }
@@ -75,11 +78,12 @@ JQueryUIMetadataLibrary >> imagesuibgfinegrain10eceadf60x60PngContent [
 
 { #category : #'uploaded metadata' }
 JQueryUIMetadataLibrary >> imagesuibgfinegrain10f8f7f660x60Png [
+
 	^ WAFileLibraryResource
 		filepath: 'images/ui-bg_fine-grain_10_f8f7f6_60x60.png'
-		mimeType: (WAMimeType main: 'image' sub: 'png')
-		cacheDuration: (Duration days: 0 hours: 0 minutes: 30 seconds: 0)
-		contents: (GRDelayedSend receiver: self selector: #imagesuibgfinegrain10f8f7f660x60PngContent)
+		mimeType: ( WAMimeType main: 'image' sub: 'png' )
+		cacheDuration: self class defaultCacheDuration
+		contents: ( GRDelayedSend receiver: self selector: #imagesuibgfinegrain10f8f7f660x60PngContent )
 ]
 
 { #category : #uploaded }
@@ -89,11 +93,12 @@ JQueryUIMetadataLibrary >> imagesuibgfinegrain10f8f7f660x60PngContent [
 
 { #category : #'uploaded metadata' }
 JQueryUIMetadataLibrary >> imagesuibgfinegrain15eceadf60x60Png [
+
 	^ WAFileLibraryResource
 		filepath: 'images/ui-bg_fine-grain_15_eceadf_60x60.png'
-		mimeType: (WAMimeType main: 'image' sub: 'png')
-		cacheDuration: (Duration days: 0 hours: 0 minutes: 30 seconds: 0)
-		contents: (GRDelayedSend receiver: self selector: #imagesuibgfinegrain15eceadf60x60PngContent)
+		mimeType: ( WAMimeType main: 'image' sub: 'png' )
+		cacheDuration: self class defaultCacheDuration
+		contents: ( GRDelayedSend receiver: self selector: #imagesuibgfinegrain15eceadf60x60PngContent )
 ]
 
 { #category : #uploaded }
@@ -103,11 +108,12 @@ JQueryUIMetadataLibrary >> imagesuibgfinegrain15eceadf60x60PngContent [
 
 { #category : #'uploaded metadata' }
 JQueryUIMetadataLibrary >> imagesuibgfinegrain15f7f3de60x60Png [
+
 	^ WAFileLibraryResource
 		filepath: 'images/ui-bg_fine-grain_15_f7f3de_60x60.png'
-		mimeType: (WAMimeType main: 'image' sub: 'png')
-		cacheDuration: (Duration days: 0 hours: 0 minutes: 30 seconds: 0)
-		contents: (GRDelayedSend receiver: self selector: #imagesuibgfinegrain15f7f3de60x60PngContent)
+		mimeType: ( WAMimeType main: 'image' sub: 'png' )
+		cacheDuration: self class defaultCacheDuration
+		contents: ( GRDelayedSend receiver: self selector: #imagesuibgfinegrain15f7f3de60x60PngContent )
 ]
 
 { #category : #uploaded }
@@ -117,11 +123,12 @@ JQueryUIMetadataLibrary >> imagesuibgfinegrain15f7f3de60x60PngContent [
 
 { #category : #'uploaded metadata' }
 JQueryUIMetadataLibrary >> imagesuibgfinegrain15ffffff60x60Png [
+
 	^ WAFileLibraryResource
 		filepath: 'images/ui-bg_fine-grain_15_ffffff_60x60.png'
-		mimeType: (WAMimeType main: 'image' sub: 'png')
-		cacheDuration: (Duration days: 0 hours: 0 minutes: 30 seconds: 0)
-		contents: (GRDelayedSend receiver: self selector: #imagesuibgfinegrain15ffffff60x60PngContent)
+		mimeType: ( WAMimeType main: 'image' sub: 'png' )
+		cacheDuration: self class defaultCacheDuration
+		contents: ( GRDelayedSend receiver: self selector: #imagesuibgfinegrain15ffffff60x60PngContent )
 ]
 
 { #category : #uploaded }
@@ -131,11 +138,12 @@ JQueryUIMetadataLibrary >> imagesuibgfinegrain15ffffff60x60PngContent [
 
 { #category : #'uploaded metadata' }
 JQueryUIMetadataLibrary >> imagesuibgfinegrain65654b2460x60Png [
+
 	^ WAFileLibraryResource
 		filepath: 'images/ui-bg_fine-grain_65_654b24_60x60.png'
-		mimeType: (WAMimeType main: 'image' sub: 'png')
-		cacheDuration: (Duration days: 0 hours: 0 minutes: 30 seconds: 0)
-		contents: (GRDelayedSend receiver: self selector: #imagesuibgfinegrain65654b2460x60PngContent)
+		mimeType: ( WAMimeType main: 'image' sub: 'png' )
+		cacheDuration: self class defaultCacheDuration
+		contents: ( GRDelayedSend receiver: self selector: #imagesuibgfinegrain65654b2460x60PngContent )
 ]
 
 { #category : #uploaded }
@@ -145,11 +153,12 @@ JQueryUIMetadataLibrary >> imagesuibgfinegrain65654b2460x60PngContent [
 
 { #category : #'uploaded metadata' }
 JQueryUIMetadataLibrary >> imagesuibgfinegrain68b8340060x60Png [
+
 	^ WAFileLibraryResource
 		filepath: 'images/ui-bg_fine-grain_68_b83400_60x60.png'
-		mimeType: (WAMimeType main: 'image' sub: 'png')
-		cacheDuration: (Duration days: 0 hours: 0 minutes: 30 seconds: 0)
-		contents: (GRDelayedSend receiver: self selector: #imagesuibgfinegrain68b8340060x60PngContent)
+		mimeType: ( WAMimeType main: 'image' sub: 'png' )
+		cacheDuration: self class defaultCacheDuration
+		contents: ( GRDelayedSend receiver: self selector: #imagesuibgfinegrain68b8340060x60PngContent )
 ]
 
 { #category : #uploaded }
@@ -159,11 +168,12 @@ JQueryUIMetadataLibrary >> imagesuibgfinegrain68b8340060x60PngContent [
 
 { #category : #'uploaded metadata' }
 JQueryUIMetadataLibrary >> imagesuiicons222222256x240Png [
+
 	^ WAFileLibraryResource
 		filepath: 'images/ui-icons_222222_256x240.png'
-		mimeType: (WAMimeType main: 'image' sub: 'png')
-		cacheDuration: (Duration days: 0 hours: 0 minutes: 30 seconds: 0)
-		contents: (GRDelayedSend receiver: self selector: #imagesuiicons222222256x240PngContent)
+		mimeType: ( WAMimeType main: 'image' sub: 'png' )
+		cacheDuration: self class defaultCacheDuration
+		contents: ( GRDelayedSend receiver: self selector: #imagesuiicons222222256x240PngContent )
 ]
 
 { #category : #uploaded }
@@ -173,11 +183,12 @@ JQueryUIMetadataLibrary >> imagesuiicons222222256x240PngContent [
 
 { #category : #'uploaded metadata' }
 JQueryUIMetadataLibrary >> imagesuiicons3572ac256x240Png [
+
 	^ WAFileLibraryResource
 		filepath: 'images/ui-icons_3572ac_256x240.png'
-		mimeType: (WAMimeType main: 'image' sub: 'png')
-		cacheDuration: (Duration days: 0 hours: 0 minutes: 30 seconds: 0)
-		contents: (GRDelayedSend receiver: self selector: #imagesuiicons3572ac256x240PngContent)
+		mimeType: ( WAMimeType main: 'image' sub: 'png' )
+		cacheDuration: self class defaultCacheDuration
+		contents: ( GRDelayedSend receiver: self selector: #imagesuiicons3572ac256x240PngContent )
 ]
 
 { #category : #uploaded }
@@ -187,11 +198,12 @@ JQueryUIMetadataLibrary >> imagesuiicons3572ac256x240PngContent [
 
 { #category : #'uploaded metadata' }
 JQueryUIMetadataLibrary >> imagesuiicons8c291d256x240Png [
+
 	^ WAFileLibraryResource
 		filepath: 'images/ui-icons_8c291d_256x240.png'
-		mimeType: (WAMimeType main: 'image' sub: 'png')
-		cacheDuration: (Duration days: 0 hours: 0 minutes: 30 seconds: 0)
-		contents: (GRDelayedSend receiver: self selector: #imagesuiicons8c291d256x240PngContent)
+		mimeType: ( WAMimeType main: 'image' sub: 'png' )
+		cacheDuration: self class defaultCacheDuration
+		contents: ( GRDelayedSend receiver: self selector: #imagesuiicons8c291d256x240PngContent )
 ]
 
 { #category : #uploaded }
@@ -201,11 +213,12 @@ JQueryUIMetadataLibrary >> imagesuiicons8c291d256x240PngContent [
 
 { #category : #'uploaded metadata' }
 JQueryUIMetadataLibrary >> imagesuiiconsb83400256x240Png [
+
 	^ WAFileLibraryResource
 		filepath: 'images/ui-icons_b83400_256x240.png'
-		mimeType: (WAMimeType main: 'image' sub: 'png')
-		cacheDuration: (Duration days: 0 hours: 0 minutes: 30 seconds: 0)
-		contents: (GRDelayedSend receiver: self selector: #imagesuiiconsb83400256x240PngContent)
+		mimeType: ( WAMimeType main: 'image' sub: 'png' )
+		cacheDuration: self class defaultCacheDuration
+		contents: ( GRDelayedSend receiver: self selector: #imagesuiiconsb83400256x240PngContent )
 ]
 
 { #category : #uploaded }
@@ -215,11 +228,12 @@ JQueryUIMetadataLibrary >> imagesuiiconsb83400256x240PngContent [
 
 { #category : #'uploaded metadata' }
 JQueryUIMetadataLibrary >> imagesuiiconsfbdb93256x240Png [
+
 	^ WAFileLibraryResource
 		filepath: 'images/ui-icons_fbdb93_256x240.png'
-		mimeType: (WAMimeType main: 'image' sub: 'png')
-		cacheDuration: (Duration days: 0 hours: 0 minutes: 30 seconds: 0)
-		contents: (GRDelayedSend receiver: self selector: #imagesuiiconsfbdb93256x240PngContent)
+		mimeType: ( WAMimeType main: 'image' sub: 'png' )
+		cacheDuration: self class defaultCacheDuration
+		contents: ( GRDelayedSend receiver: self selector: #imagesuiiconsfbdb93256x240PngContent )
 ]
 
 { #category : #uploaded }
@@ -229,11 +243,12 @@ JQueryUIMetadataLibrary >> imagesuiiconsfbdb93256x240PngContent [
 
 { #category : #'uploaded metadata' }
 JQueryUIMetadataLibrary >> imagesuiiconsffffff256x240Png [
+
 	^ WAFileLibraryResource
 		filepath: 'images/ui-icons_ffffff_256x240.png'
-		mimeType: (WAMimeType main: 'image' sub: 'png')
-		cacheDuration: (Duration days: 0 hours: 0 minutes: 30 seconds: 0)
-		contents: (GRDelayedSend receiver: self selector: #imagesuiiconsffffff256x240PngContent)
+		mimeType: ( WAMimeType main: 'image' sub: 'png' )
+		cacheDuration: self class defaultCacheDuration
+		contents: ( GRDelayedSend receiver: self selector: #imagesuiiconsffffff256x240PngContent )
 ]
 
 { #category : #uploaded }
