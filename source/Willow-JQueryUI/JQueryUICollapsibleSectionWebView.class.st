@@ -6,35 +6,63 @@ Class {
 	#name : #JQueryUICollapsibleSectionWebView,
 	#superclass : #WAPainter,
 	#instVars : [
-		'cssStyle',
-		'contentView'
+		'sections',
+		'commandToComponent'
 	],
-	#category : 'Willow-JQueryUI-WebViews'
+	#category : #'Willow-JQueryUI-WebViews'
 }
 
 { #category : #'instance creation' }
-JQueryUICollapsibleSectionWebView class >> containing: aContentView styledAs: aCssStyle [
+JQueryUICollapsibleSectionWebView class >> applying: aBlockOrWebComponentCommand [
 
-	^ self new initializeContaining: aContentView styledAs: aCssStyle
+	^ self new initializeApplying: aBlockOrWebComponentCommand
+]
+
+{ #category : #accessing }
+JQueryUICollapsibleSectionWebView >> addCollapsedSectionNamed: aName containing: aContent [
+
+	self addSectionNamed: aName containing: aContent applying: self initiallyCollapsedCommand
+]
+
+{ #category : #accessing }
+JQueryUICollapsibleSectionWebView >> addSectionNamed: aName containing: aContent [
+
+	self addSectionNamed: aName containing: aContent applying: [  ]
+]
+
+{ #category : #accessing }
+JQueryUICollapsibleSectionWebView >> addSectionNamed: aName containing: aContent applying: aCommandToSection [
+
+	sections
+		add: [ :canvas | 
+			canvas heading: aName.
+			canvas div with: aContent applying: aCommandToSection
+			]
 ]
 
 { #category : #initialization }
-JQueryUICollapsibleSectionWebView >> initializeContaining: aContentView styledAs: aCssStyle [
+JQueryUICollapsibleSectionWebView >> initializeApplying: aBlockOrWebComponentCommand [
 
-	contentView := aContentView.
-	cssStyle := aCssStyle
+	sections := OrderedCollection new.
+	commandToComponent := aBlockOrWebComponentCommand asWebComponentCommand
+]
+
+{ #category : #'private - accessing' }
+JQueryUICollapsibleSectionWebView >> initiallyCollapsedCommand [
+
+	^ [ :view | view setStyleTo: [ :style | style display: #none ] ]
 ]
 
 { #category : #rendering }
 JQueryUICollapsibleSectionWebView >> renderContentOn: aCanvas [
 
-	(aCanvas div class: cssStyle)
+	aCanvas div
 		script:
-				(aCanvas jQuery new accordion
-						collapsible: true;
-						icons: false;
-						animate: 50;
-						heightStyle: 'content';
-						yourself);
-		with: [ aCanvas render: contentView ]
+			( aCanvas jQuery new accordion
+				collapsible: true;
+				icons: false;
+				animate: 50;
+				heightStyle: 'content';
+				yourself );
+		with: sections applying: commandToComponent
 ]
