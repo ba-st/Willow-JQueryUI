@@ -96,12 +96,6 @@ JQueryUIComponentSupplier class >> withJQueryUILibrary: aJQueryUILibrary [
 	^ self usingAll: {aJQueryUILibrary}
 ]
 
-{ #category : #Interaction }
-JQueryUIComponentSupplier >> addStatementsTo: aJSScript toCloseDialogsIn: jQueryMatchingDialogContainer matching: dialogSupplier on: aCanvas [
-
-	aJSScript << (dialogSupplier value: (aCanvas jQuery class: self jQueryUI >> #uiDialogContent)) dialog close
-]
-
 { #category : #Supplying }
 JQueryUIComponentSupplier >> asynchronicButtonLabeled: aRenderable applying: aComponentCommand [
 
@@ -260,6 +254,13 @@ JQueryUIComponentSupplier >> singleSelectionListBoxDisplayingAtOnce: aNumberOfEl
 	^ SingleSelectionListBoxWebView
 		displayingAtOnce: aNumberOfElements
 		applying: aComponentCommand
+]
+
+{ #category : #Interaction }
+JQueryUIComponentSupplier >> statementToCloseDialogsIn: jQueryMatchingDialogContainer matching: dialogSupplier on: aCanvas [
+
+	^ ( dialogSupplier value: ( aCanvas jQuery class: self jQueryUI >> #uiDialogContent ) ) dialog
+		close
 ]
 
 { #category : #Supplying }

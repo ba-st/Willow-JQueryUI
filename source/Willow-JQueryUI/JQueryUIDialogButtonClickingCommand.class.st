@@ -4,14 +4,8 @@ I'm a component command with the logic to configure the interaction of the accep
 Class {
 	#name : #JQueryUIDialogButtonClickingCommand,
 	#superclass : #WebInteractionCommand,
-	#category : 'Willow-JQueryUI-Frontend'
+	#category : #'Willow-JQueryUI-Frontend'
 }
-
-{ #category : #accessing }
-JQueryUIDialogButtonClickingCommand >> clientIndependentActions [
-
-	^#()
-]
 
 { #category : #'accessing - private' }
 JQueryUIDialogButtonClickingCommand >> dialogButtonsOn: aCanvas [
@@ -26,9 +20,9 @@ JQueryUIDialogButtonClickingCommand >> firstDialogButtonOn: aCanvas [
 ]
 
 { #category : #accessing }
-JQueryUIDialogButtonClickingCommand >> modelLoadingActions [
+JQueryUIDialogButtonClickingCommand >> modelLoadingInstructions [
 
-	^#()
+	^ WebInteractionInstructions empty
 ]
 
 { #category : #'accessing - private' }
@@ -40,7 +34,7 @@ JQueryUIDialogButtonClickingCommand >> parentDialogOn: aCanvas [
 { #category : #accessing }
 JQueryUIDialogButtonClickingCommand >> priorityActions [
 
-	^#()
+	^ #()
 ]
 
 { #category : #testing }
@@ -50,7 +44,8 @@ JQueryUIDialogButtonClickingCommand >> requiresSerialization [
 ]
 
 { #category : #accessing }
-JQueryUIDialogButtonClickingCommand >> serverIndependentActions [
+JQueryUIDialogButtonClickingCommand >> serverIndependentInstructions [
 
-	^ Array with: [ :aScript :aCanvas | aScript << (self firstDialogButtonOn: aCanvas) call: 'click' ]
+	^ WebInteractionInstructions
+		directingTo: [ :aCanvas | ( self firstDialogButtonOn: aCanvas ) call: 'click' ]
 ]
