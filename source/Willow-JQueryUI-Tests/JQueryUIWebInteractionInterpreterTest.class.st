@@ -27,8 +27,8 @@ JQueryUIWebInteractionInterpreterTest >> testCombinedToggleCssClassOnComponentsW
 
 	| interpreter html |
 
-	interpreter := CombinedWebInteractionInterpreter
-		combiningInterpretersOf:
+	interpreter := CombinedEventInterpreterDispatcher
+		combiningInterpretersOfAll:
 			{okButton.
 			cancelButton}.
 
@@ -53,7 +53,7 @@ JQueryUIWebInteractionInterpreterTest >> testToggleCssClassOnComponentsWithClass
 
 	| interpreter html |
 
-	interpreter := WebInteractionInterpreter forClickOnComponent.
+	interpreter := EventInterpreterDispatcher defaultingToClick.
 	interpreter
 		updateCssClasses: [ :element | element toggleClass: Classification >> #loading withEffect: #bounce ]
 		onElementsMatching: [ :canvas | canvas jQuery class: Classification >> #willow ].

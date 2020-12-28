@@ -10,7 +10,7 @@ Class {
 		'interactionInterpreter',
 		'elementCommandProvider'
 	],
-	#category : 'Willow-JQueryUI-WebViews'
+	#category : #'Willow-JQueryUI-WebViews'
 }
 
 { #category : #'instance creation' }
@@ -26,13 +26,22 @@ JQueryUIButtonSetWebView >> initializeApplying: aCommandToComponent obtainingCom
 
 	commandToComponent := aCommandToComponent.
 	elementCommandProvider := aLabelCommandProvider.
-	interactionInterpreter := WebInteractionInterpreter forChangeInComponentValue
+	interactionInterpreter := EventInterpreterDispatcher defaultingToChange
+]
+
+{ #category : #configuring }
+JQueryUIButtonSetWebView >> on [
+
+	^ interactionInterpreter
 ]
 
 { #category : #configuring }
 JQueryUIButtonSetWebView >> onTrigger [
 
-	^ interactionInterpreter
+	self
+		deprecated: 'Use #on instead.'
+		transformWith: '`@receiver onTrigger' -> '`@receiver on trigger'.
+	^ self on trigger
 ]
 
 { #category : #rendering }

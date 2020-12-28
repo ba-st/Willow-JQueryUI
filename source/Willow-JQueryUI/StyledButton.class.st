@@ -20,14 +20,26 @@ StyledButton class >> describedBy: aDescription styledAs: aCssStyle [
 { #category : #initialization }
 StyledButton >> initializeDescribedBy: aDescription styledAs: aCssStyle [
 
-	commandToComponent := [ :button | (button setTitleTo: aDescription) + (ComponentClassificationCommand toStyleWith: aCssStyle) + button addClass jQueryUI uiWidgetContent + button addClass jQueryUI uiCornerAll ].
-	interactionInterpreter := WebInteractionInterpreter forClickOnComponent
+	commandToComponent := [ :button | 
+	( button setTitleTo: aDescription ) + ( ComponentClassificationCommand toStyleWith: aCssStyle )
+		+ button addClass jQueryUI uiWidgetContent + button addClass jQueryUI uiCornerAll
+	].
+	interactionInterpreter := EventInterpreterDispatcher defaultingToClick
+]
+
+{ #category : #configuring }
+StyledButton >> on [
+
+	^ interactionInterpreter
 ]
 
 { #category : #configuring }
 StyledButton >> onTrigger [
 
-	^interactionInterpreter
+	self
+		deprecated: 'Use #on instead.'
+		transformWith: '`@receiver onTrigger' -> '`@receiver on trigger'.
+	^ self on trigger
 ]
 
 { #category : #rendering }
