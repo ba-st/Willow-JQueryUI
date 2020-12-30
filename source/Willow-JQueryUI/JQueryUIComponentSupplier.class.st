@@ -214,7 +214,7 @@ JQueryUIComponentSupplier >> jQueryUI [
 { #category : #Supplying }
 JQueryUIComponentSupplier >> multiLineTextFieldApplying: aComponentCommand [
 
-	^ TextFieldWebView multiLineTriggeringOnChangeApplying: aComponentCommand
+	^ TextFieldWebView multiLineApplying: aComponentCommand
 ]
 
 { #category : #Supplying }
@@ -245,7 +245,7 @@ JQueryUIComponentSupplier >> radioRenderingWith: aRenderingBlock applyingToLabel
 { #category : #Supplying }
 JQueryUIComponentSupplier >> singleLineTextFieldApplying: aComponentCommand [
 
-	^ TextFieldWebView singleLineTriggeringOnChangeApplying: aComponentCommand
+	^ TextFieldWebView singleLineApplying: aComponentCommand
 ]
 
 { #category : #Supplying }
