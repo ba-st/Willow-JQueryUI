@@ -63,7 +63,7 @@ JQueryUIButtonSetWebView >> renderRadioButtonFor: anElement asPartOf: aRadioGrou
 
 	| radioButtonId radioButton |
 
-	radioButtonId := (IdentifierAssigner prefixedBy: 'radio-button') identifyIn: aCanvas.
+	radioButtonId := (IdentifierAssigner prefixedBy: 'radio-button') identifierOn: aCanvas.
 	radioButton := self
 		renderedButtonIdentifiedAs: radioButtonId
 		for: anElement
