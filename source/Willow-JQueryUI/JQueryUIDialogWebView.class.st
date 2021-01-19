@@ -48,9 +48,9 @@ JQueryUIDialogWebView >> addAcceptButtonTo: aDialog on: aCanvas [
 { #category : #'private - configuring' }
 JQueryUIDialogWebView >> configureAcceptButton [
 
-	self onTrigger
+	self on trigger
 		serializeChildForm;
-		executeOnClient: [ :canvas | self functionToRemoveComponentOn: canvas ]
+		userAgentDo: [ :canvas | self functionToRemoveComponentOn: canvas ]
 ]
 
 { #category : #'private - configuring' }
@@ -100,7 +100,9 @@ JQueryUIDialogWebView >> initializeCommandToComponentWith: aCommand [
 { #category : #initialization }
 JQueryUIDialogWebView >> initializeInteractionInterpreter [
 
-	interactionInterpreter := WebInteractionInterpreter forEvaluationOf: #add: withAll: #()
+	interactionInterpreter := EventInterpreterDispatcher
+		interpretingByDefault: 'add'
+		configuring: ( WebInteractionInterpreter forEvaluationOf: #add: withAll: #() )
 ]
 
 { #category : #initialization }
@@ -115,7 +117,7 @@ JQueryUIDialogWebView >> initializeTitled: aTitle containing: aRenderable accept
 ]
 
 { #category : #configuring }
-JQueryUIDialogWebView >> onTrigger [
+JQueryUIDialogWebView >> on [
 
 	^ interactionInterpreter
 ]

@@ -10,7 +10,7 @@ Class {
 		'interactionInterpreter',
 		'elementCommandProvider'
 	],
-	#category : 'Willow-JQueryUI-WebViews'
+	#category : #'Willow-JQueryUI-WebViews'
 }
 
 { #category : #'instance creation' }
@@ -26,11 +26,11 @@ JQueryUIButtonSetWebView >> initializeApplying: aCommandToComponent obtainingCom
 
 	commandToComponent := aCommandToComponent.
 	elementCommandProvider := aLabelCommandProvider.
-	interactionInterpreter := WebInteractionInterpreter forChangeInComponentValue
+	interactionInterpreter := EventInterpreterDispatcher defaultingToChange
 ]
 
 { #category : #configuring }
-JQueryUIButtonSetWebView >> onTrigger [
+JQueryUIButtonSetWebView >> on [
 
 	^ interactionInterpreter
 ]
@@ -38,7 +38,9 @@ JQueryUIButtonSetWebView >> onTrigger [
 { #category : #rendering }
 JQueryUIButtonSetWebView >> renderContentOn: aCanvas [
 
-	(self renderedComponentOn: aCanvas) with: [ self renderRadioGroupOn: aCanvas ] applying: commandToComponent
+	( self renderedComponentOn: aCanvas )
+		with: [ self renderRadioGroupOn: aCanvas ]
+		applying: commandToComponent
 ]
 
 { #category : #'private-rendering' }
@@ -54,7 +56,7 @@ JQueryUIButtonSetWebView >> renderRadioButtonFor: anElement asPartOf: aRadioGrou
 
 	| radioButtonId radioButton |
 
-	radioButtonId := (IdentifierAssigner prefixedBy: 'radio-button') identifyIn: aCanvas.
+	radioButtonId := (IdentifierAssigner prefixedBy: 'radio-button') identifierOn: aCanvas.
 	radioButton := self
 		renderedButtonIdentifiedAs: radioButtonId
 		for: anElement

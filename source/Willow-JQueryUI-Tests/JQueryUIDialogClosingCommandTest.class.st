@@ -4,7 +4,7 @@ A DialogClosingCommandTest is a test class for testing the behavior of DialogClo
 Class {
 	#name : #JQueryUIDialogClosingCommandTest,
 	#superclass : #BWRenderingTest,
-	#category : 'Willow-JQueryUI-Tests-WebInteraction'
+	#category : #'Willow-JQueryUI-Tests-WebInteraction'
 }
 
 { #category : #private }
@@ -37,12 +37,14 @@ JQueryUIDialogClosingCommandTest >> testModelLoadingActionsWhenOnlyRemovingLastD
 			script := canvas javascript.
 			anchor := canvas anchor.
 			canvas ensureIdFor: anchor.
-			DialogClosingCommand onlyForLastDialog modelLoadingActions do: [ :action | action value: script value: canvas ].
-			anchor script: (canvas jQuery this onClick: script) ].
+			DialogClosingCommand onlyForLastDialog modelLoadingInstructions appendTo: script on: canvas.
+			anchor script: ( canvas jQuery this onClick: script )
+			].
 
 	self
 		assert: html
-		equals: '<a id="a-id1"></a><script type="text/javascript">$("#a-id1").click(function(){$(".ui-dialog-content").last().dialog("close")});</script>'
+		equals:
+			'<a id="a-id1"></a><script type="text/javascript">$("#a-id1").click(function(){$(".ui-dialog-content").last().dialog("close")});</script>'
 ]
 
 { #category : #tests }
@@ -57,10 +59,12 @@ JQueryUIDialogClosingCommandTest >> testModelLoadingActionsWhenRemovingAllDialog
 			script := canvas javascript.
 			anchor := canvas anchor.
 			canvas ensureIdFor: anchor.
-			DialogClosingCommand forAllDialogs modelLoadingActions do: [ :action | action value: script value: canvas ].
-			anchor script: (canvas jQuery this onClick: script) ].
+			DialogClosingCommand forAllDialogs modelLoadingInstructions appendTo: script on: canvas.
+			anchor script: ( canvas jQuery this onClick: script )
+			].
 
 	self
 		assert: html
-		equals: '<a id="a-id1"></a><script type="text/javascript">$("#a-id1").click(function(){$(".ui-dialog-content").dialog("close")});</script>'
+		equals:
+			'<a id="a-id1"></a><script type="text/javascript">$("#a-id1").click(function(){$(".ui-dialog-content").dialog("close")});</script>'
 ]
