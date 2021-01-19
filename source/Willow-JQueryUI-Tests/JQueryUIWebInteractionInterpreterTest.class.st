@@ -23,6 +23,22 @@ JQueryUIWebInteractionInterpreterTest >> setUp [
 ]
 
 { #category : #tests }
+JQueryUIWebInteractionInterpreterTest >> testAcceptContainerDialog [
+
+	| interpreter html |
+
+	interpreter := EventInterpreterDispatcher defaultingToClick trigger.
+	interpreter acceptContainerDialog.
+	html := self
+		apply: interpreter
+		toComponentDefinedBy: [ :canvas | canvas textInput apply: [ :input | input addClass willow ] ].
+	self
+		assert: html
+		equals:
+			'<input class="willow" id="input-id1" type="text"/><script type="text/javascript">$("#input-id1").click(function(event){$(this).closest("div.ui-dialog").find($("div.ui-dialog-buttonset button.ui-button")).first().click()});</script>'
+]
+
+{ #category : #tests }
 JQueryUIWebInteractionInterpreterTest >> testCombinedToggleCssClassOnComponentsWithClassWithEffect [
 
 	| interpreter html |

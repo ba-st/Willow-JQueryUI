@@ -38,7 +38,9 @@ JQueryUIButtonSetWebView >> on [
 { #category : #rendering }
 JQueryUIButtonSetWebView >> renderContentOn: aCanvas [
 
-	(self renderedComponentOn: aCanvas) with: [ self renderRadioGroupOn: aCanvas ] applying: commandToComponent
+	( self renderedComponentOn: aCanvas )
+		with: [ self renderRadioGroupOn: aCanvas ]
+		applying: commandToComponent
 ]
 
 { #category : #'private-rendering' }

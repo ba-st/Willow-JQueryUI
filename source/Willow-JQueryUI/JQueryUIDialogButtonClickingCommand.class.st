@@ -40,7 +40,7 @@ JQueryUIDialogButtonClickingCommand >> priorityActions [
 { #category : #testing }
 JQueryUIDialogButtonClickingCommand >> requiresSerialization [
 
-	^false
+	^ false
 ]
 
 { #category : #accessing }
