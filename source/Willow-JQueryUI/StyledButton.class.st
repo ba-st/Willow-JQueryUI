@@ -33,15 +33,6 @@ StyledButton >> on [
 	^ interactionInterpreter
 ]
 
-{ #category : #configuring }
-StyledButton >> onTrigger [
-
-	self
-		deprecated: 'Use #on instead.'
-		transformWith: '`@receiver onTrigger' -> '`@receiver on trigger'.
-	^ self on trigger
-]
-
 { #category : #rendering }
 StyledButton >> renderContentOn: aCanvas [
 
