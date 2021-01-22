@@ -149,9 +149,11 @@ JQueryUIComponentSupplier >> dialogBuilder [
 ]
 
 { #category : #Supplying }
-JQueryUIComponentSupplier >> dropdownListApplying: aComponentCommand [
+JQueryUIComponentSupplier >> dropdownListApplying: aComponentCommand applyingToOptions: anOptionCommand [
 
-	^ SingleSelectionWebView dropDownListApplying: aComponentCommand
+	^ SingleSelectionWebView
+		dropDownListApplying: aComponentCommand
+		applyingToOptions: anOptionCommand
 ]
 
 { #category : #Supplying }
@@ -249,11 +251,12 @@ JQueryUIComponentSupplier >> singleLineTextFieldApplying: aComponentCommand [
 ]
 
 { #category : #Supplying }
-JQueryUIComponentSupplier >> singleSelectionListBoxDisplayingAtOnce: aNumberOfElements applying: aComponentCommand [
+JQueryUIComponentSupplier >> singleSelectionListBoxDisplayingAtOnce: aNumberOfElements applying: aComponentCommand applyingToOptions: anOptionCommand [
 
 	^ SingleSelectionWebView
 		listBoxDisplayingAtOnce: aNumberOfElements
 		applying: aComponentCommand
+		applyingToOptions: anOptionCommand
 ]
 
 { #category : #Interaction }
