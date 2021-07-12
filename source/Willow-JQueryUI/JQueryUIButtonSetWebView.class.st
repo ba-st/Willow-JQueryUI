@@ -4,7 +4,7 @@ https://api.jqueryui.com/buttonset/
 "
 Class {
 	#name : #JQueryUIButtonSetWebView,
-	#superclass : #SingleSelectionWebViewBehavior,
+	#superclass : #AbstractSingleSelectionWebView,
 	#instVars : [
 		'commandToComponent',
 		'interactionInterpreter',
@@ -26,7 +26,7 @@ JQueryUIButtonSetWebView >> initializeApplying: aCommandToComponent obtainingCom
 
 	commandToComponent := aCommandToComponent.
 	elementCommandProvider := aLabelCommandProvider.
-	interactionInterpreter := EventInterpreterDispatcher defaultingToChange
+	interactionInterpreter := SingleEventInterpreterDispatcher defaultingToChange
 ]
 
 { #category : #configuring }
