@@ -3,8 +3,9 @@
 In order to include **Willow JQueryUI** as part of your project, you should reference
 the package in your product baseline:
 
-1. Define the Willow JQueryUI repository and version to be used, and the [baseline groups](../reference/Baseline-groups.md)
-    you want to depend on (usually it will be `Deployment`).
+1. Define the Willow JQueryUI repository and version to be used, and the
+  [baseline groups](../reference/Baseline-groups.md) you want to depend on
+  (usually it will be `Deployment`).
 
     If you're unsure on what to depend use the *Dependency Analyzer*
     tool to choose an appropriate group including the packages you need.
@@ -16,7 +17,7 @@ the package in your product baseline:
 
       spec
         baseline: 'WillowJQueryUI'
-        with: [ spec repository: 'github://github://ba-st/Willow-JQueryUI:v{XX}' ];
+        with: [ spec repository: 'github://github://ba-st/Willow-JQueryUI:v{XX}'];
         project: 'Willow-JQueryUI-Deployment'
         copyFrom: 'WillowJQueryUI' with: [ spec loads: 'Deployment' ]
     ```
