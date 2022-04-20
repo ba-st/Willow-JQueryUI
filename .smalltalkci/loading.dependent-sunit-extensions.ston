@@ -2,15 +2,12 @@ SmalltalkCISpec {
   #loading : [
     SCIMetacelloLoadSpec {
       #baseline : 'WillowJQueryUI',
-      #directory : 'source',
-      #load : [ 'Tests' ],
+      #directory : '../source',
+      #load : [ 'Dependent-SUnit-Extensions' ],
       #platforms : [  #pharo ]
     }
   ],
   #testing : {
-    #coverage : {
-      #packages : [ 'Willow-JQueryUI*' ],
-      #format: #lcov
-    }
-  }   
+    #failOnZeroTests : false
+  }
 }
