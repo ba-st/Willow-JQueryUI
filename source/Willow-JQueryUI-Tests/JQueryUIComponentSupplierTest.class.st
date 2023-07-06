@@ -187,14 +187,14 @@ JQueryUIComponentSupplierTest >> testUpdateRoot [
 	| html |
 
 	html := WAHtmlCanvas builder
-		fullDocument: true;
-		rootBlock: [ :root | JQueryUIComponentSupplier online updateRoot: root ];
-		render: [ :canvas |  ].
+		        fullDocument: true;
+		        rootBlock: [ :root | JQueryUIComponentSupplier online updateRoot: root ];
+		        render: [ :canvas |  ].
 
 	self
 		assert: html
 		equals:
-			 '<!DOCTYPE html><html><head><title></title><meta name="viewport" content="width=device-width, initial-scale=1.0"/><link rel="stylesheet" type="text/css" href="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js"/><script type="text/javascript" src="https://code.jquery.com/ui/1.13.2/themes/pepper-grinder/jquery-ui.css"></script></head><body onload="onLoad()"><script type="text/javascript">function onLoad(){};</script></body></html>'
+		'<!DOCTYPE html><html><head><title></title><meta name="viewport" content="width=device-width, initial-scale=1.0"/><script type="text/javascript" src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js"></script><link rel="stylesheet" type="text/css" href="https://code.jquery.com/ui/1.13.2/themes/pepper-grinder/jquery-ui.css"/></head><body onload="onLoad()"><script type="text/javascript">function onLoad(){};</script></body></html>'
 ]
 
 { #category : #'tests-Processing' }
