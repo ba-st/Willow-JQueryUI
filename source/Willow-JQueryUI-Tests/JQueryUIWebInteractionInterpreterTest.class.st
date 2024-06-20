@@ -27,7 +27,7 @@ JQueryUIWebInteractionInterpreterTest >> testAcceptContainerDialog [
 
 	| interpreter html |
 
-	interpreter := EventInterpreterDispatcher defaultingToClick trigger.
+	interpreter := SingleEventInterpreterDispatcher defaultingToClick trigger.
 	interpreter acceptContainerDialog.
 	html := self
 		apply: interpreter
@@ -69,7 +69,7 @@ JQueryUIWebInteractionInterpreterTest >> testToggleCssClassOnComponentsWithClass
 
 	| interpreter html |
 
-	interpreter := EventInterpreterDispatcher defaultingToClick trigger.
+	interpreter := SingleEventInterpreterDispatcher defaultingToClick trigger.
 	interpreter
 		updateCssClasses: [ :element | element toggleClass: Classification >> #loading withEffect: #bounce ]
 		onElementsMatching: [ :canvas | canvas jQuery class: Classification >> #willow ].

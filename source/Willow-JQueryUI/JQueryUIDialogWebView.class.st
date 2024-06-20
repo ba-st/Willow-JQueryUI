@@ -100,7 +100,7 @@ JQueryUIDialogWebView >> initializeCommandToComponentWith: aCommand [
 { #category : #initialization }
 JQueryUIDialogWebView >> initializeInteractionInterpreter [
 
-	interactionInterpreter := EventInterpreterDispatcher
+	interactionInterpreter := SingleEventInterpreterDispatcher
 		interpretingByDefault: 'add'
 		configuring: ( WebInteractionInterpreter forEvaluationOf: #add: withAll: #() )
 ]
