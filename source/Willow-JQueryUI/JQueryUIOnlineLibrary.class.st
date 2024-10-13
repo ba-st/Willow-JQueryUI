@@ -2,12 +2,14 @@
 I'm a WALibrary serving the files from the official CDN.
 "
 Class {
-	#name : #JQueryUIOnlineLibrary,
-	#superclass : #WAOnlineLibrary,
-	#category : #'Willow-JQueryUI-Libraries'
+	#name : 'JQueryUIOnlineLibrary',
+	#superclass : 'WAOnlineLibrary',
+	#category : 'Willow-JQueryUI-Libraries',
+	#package : 'Willow-JQueryUI',
+	#tag : 'Libraries'
 }
 
-{ #category : #Updating }
+{ #category : 'Updating' }
 JQueryUIOnlineLibrary >> updateRoot: aRoot [
 
 	aRoot javascript url:
@@ -17,7 +19,7 @@ JQueryUIOnlineLibrary >> updateRoot: aRoot [
 			  self version )
 ]
 
-{ #category : #Accessing }
+{ #category : 'Accessing' }
 JQueryUIOnlineLibrary >> version [
 
 	^'1.13.2'

@@ -1,1 +1,1 @@
-Package { #name : #'Willow-JQueryUI' }
+Package { #name : 'Willow-JQueryUI' }

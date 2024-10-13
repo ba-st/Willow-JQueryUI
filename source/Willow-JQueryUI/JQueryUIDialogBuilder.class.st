@@ -1,15 +1,17 @@
 Class {
-	#name : #JQueryUIDialogBuilder,
-	#superclass : #WillowComponentBuilder,
+	#name : 'JQueryUIDialogBuilder',
+	#superclass : 'WillowComponentBuilder',
 	#instVars : [
 		'titleBinding',
 		'content',
 		'acceptTextOptional'
 	],
-	#category : #'Willow-JQueryUI-WebViews'
+	#category : 'Willow-JQueryUI-WebViews',
+	#package : 'Willow-JQueryUI',
+	#tag : 'WebViews'
 }
 
-{ #category : #building }
+{ #category : 'building' }
 JQueryUIDialogBuilder >> buildApplying: aDocumentCommand [
 
 	^ JQueryUIDialogWebView
@@ -19,19 +21,19 @@ JQueryUIDialogBuilder >> buildApplying: aDocumentCommand [
 		applying: aDocumentCommand
 ]
 
-{ #category : #configuring }
+{ #category : 'configuring' }
 JQueryUIDialogBuilder >> confirmWith: anAcceptanceText [
 
 	acceptTextOptional := Optional containing: anAcceptanceText
 ]
 
-{ #category : #configuring }
+{ #category : 'configuring' }
 JQueryUIDialogBuilder >> dismissableHeaderTitled: aRenderable [
 
 	titleBinding := Binding to: aRenderable
 ]
 
-{ #category : #initialization }
+{ #category : 'initialization' }
 JQueryUIDialogBuilder >> initialize [
 
 	super initialize.
@@ -40,7 +42,7 @@ JQueryUIDialogBuilder >> initialize [
 	acceptTextOptional := Optional unused
 ]
 
-{ #category : #configuring }
+{ #category : 'configuring' }
 JQueryUIDialogBuilder >> wrapping: theContent [
 
 	content := theContent 

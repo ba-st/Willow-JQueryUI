@@ -2,21 +2,23 @@
 I'm a component command that transforms a button into a JQueryUI button.
 "
 Class {
-	#name : #JQueryUIButtonCommand,
-	#superclass : #WebComponentCommand,
+	#name : 'JQueryUIButtonCommand',
+	#superclass : 'WebComponentCommand',
 	#instVars : [
 		'scriptProvider'
 	],
-	#category : 'Willow-JQueryUI-Frontend'
+	#category : 'Willow-JQueryUI-Frontend',
+	#package : 'Willow-JQueryUI',
+	#tag : 'Frontend'
 }
 
-{ #category : #'instance creation' }
+{ #category : 'instance creation' }
 JQueryUIButtonCommand class >> describedBy: aDescription [
 
 	^ self toExecute: [ :canvas | canvas jQuery this button text: aDescription ]
 ]
 
-{ #category : #'instance creation' }
+{ #category : 'instance creation' }
 JQueryUIButtonCommand class >> representedBy: anIcon [
 
 	^ self
@@ -26,19 +28,19 @@ JQueryUIButtonCommand class >> representedBy: anIcon [
 				primaryIcon: Classification >> #jQueryUI >> anIcon ]
 ]
 
-{ #category : #'instance creation - private' }
+{ #category : 'instance creation - private' }
 JQueryUIButtonCommand class >> toExecute: aBlock [
 
 	^ self new initializeToExecute: aBlock
 ]
 
-{ #category : #processing }
+{ #category : 'processing' }
 JQueryUIButtonCommand >> applyTo: aComponent on: aCanvas [
 
 	^ (ComponentScriptCommand toExecute: scriptProvider) applyTo: aComponent on: aCanvas
 ]
 
-{ #category : #'initialize-release' }
+{ #category : 'initialize-release' }
 JQueryUIButtonCommand >> initializeToExecute: aScriptProvider [
 
 	scriptProvider := aScriptProvider

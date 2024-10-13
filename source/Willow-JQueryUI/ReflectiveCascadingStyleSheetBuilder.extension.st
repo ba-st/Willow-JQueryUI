@@ -1,6 +1,6 @@
-Extension { #name : #ReflectiveCascadingStyleSheetBuilder }
+Extension { #name : 'ReflectiveCascadingStyleSheetBuilder' }
 
-{ #category : #'*Willow-JQueryUI' }
+{ #category : '*Willow-JQueryUI' }
 ReflectiveCascadingStyleSheetBuilder >> jQueryUI [
 
 	^ self classification >> #jQueryUI

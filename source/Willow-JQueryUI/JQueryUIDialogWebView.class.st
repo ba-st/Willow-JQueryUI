@@ -3,8 +3,8 @@ Generic Dialog Component.
 http://api.jqueryui.com/dialog/
 "
 Class {
-	#name : #JQueryUIDialogWebView,
-	#superclass : #WAPainter,
+	#name : 'JQueryUIDialogWebView',
+	#superclass : 'WAPainter',
 	#instVars : [
 		'contentsView',
 		'interactionInterpreter',
@@ -15,10 +15,12 @@ Class {
 	#pools : [
 		'Willow'
 	],
-	#category : #'Willow-JQueryUI-WebViews'
+	#category : 'Willow-JQueryUI-WebViews',
+	#package : 'Willow-JQueryUI',
+	#tag : 'WebViews'
 }
 
-{ #category : #'instance creation' }
+{ #category : 'instance creation' }
 JQueryUIDialogWebView class >> titled: aTitle containing: aRenderable acceptedUsing: aTextOptional applying: aDocumentCommand [
 
 	^ self new
@@ -28,7 +30,7 @@ JQueryUIDialogWebView class >> titled: aTitle containing: aRenderable acceptedUs
 		applying: aDocumentCommand
 ]
 
-{ #category : #'private - configuring' }
+{ #category : 'private - configuring' }
 JQueryUIDialogWebView >> addAcceptButtonLabeled: aString to: aDialog on: aCanvas [
 
 	| functions |
@@ -38,14 +40,14 @@ JQueryUIDialogWebView >> addAcceptButtonLabeled: aString to: aDialog on: aCanvas
 	aDialog addButton: aString do: functions any
 ]
 
-{ #category : #'private - configuring' }
+{ #category : 'private - configuring' }
 JQueryUIDialogWebView >> addAcceptButtonTo: aDialog on: aCanvas [
 
 	acceptButtonOptional
 		withContentDo: [ :buttonText | self addAcceptButtonLabeled: buttonText to: aDialog on: aCanvas ]
 ]
 
-{ #category : #'private - configuring' }
+{ #category : 'private - configuring' }
 JQueryUIDialogWebView >> configureAcceptButton [
 
 	self on trigger
@@ -53,19 +55,19 @@ JQueryUIDialogWebView >> configureAcceptButton [
 		userAgentDo: [ :canvas | self functionToRemoveComponentOn: canvas ]
 ]
 
-{ #category : #'private - configuring' }
+{ #category : 'private - configuring' }
 JQueryUIDialogWebView >> configureToAcceptOnTrigger [
 
 	acceptButtonOptional withContentDo: [ :buttonText | self configureAcceptButton ]
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 JQueryUIDialogWebView >> contentsView [
 
 	^ contentsView
 ]
 
-{ #category : #'private - accessing' }
+{ #category : 'private - accessing' }
 JQueryUIDialogWebView >> dialogScriptOn: aCanvas [
 
 	| dialog |
@@ -83,21 +85,21 @@ JQueryUIDialogWebView >> dialogScriptOn: aCanvas [
 	^ dialog
 ]
 
-{ #category : #'private - accessing' }
+{ #category : 'private - accessing' }
 JQueryUIDialogWebView >> functionToRemoveComponentOn: aCanvas [
 
 	^ aCanvas jQuery this remove
 		, ((aCanvas jQuery id: Constants >> #willow >> #dialogSectionName) html: [ :aSubCanvas |  ])
 ]
 
-{ #category : #initialization }
+{ #category : 'initialization' }
 JQueryUIDialogWebView >> initializeCommandToComponentWith: aCommand [
 
 	commandToComponent := aCommand asWebComponentCommand
 		+ [ :button | button addScript js: [ :canvas | self dialogScriptOn: canvas ] ]
 ]
 
-{ #category : #initialization }
+{ #category : 'initialization' }
 JQueryUIDialogWebView >> initializeInteractionInterpreter [
 
 	interactionInterpreter := EventInterpreterDispatcher
@@ -105,7 +107,7 @@ JQueryUIDialogWebView >> initializeInteractionInterpreter [
 		configuring: ( WebInteractionInterpreter forEvaluationOf: #add: withAll: #() )
 ]
 
-{ #category : #initialization }
+{ #category : 'initialization' }
 JQueryUIDialogWebView >> initializeTitled: aTitle containing: aRenderable acceptedUsing: aTextOptional applying: aComponentCommand [
 
 	title := aTitle.
@@ -116,13 +118,13 @@ JQueryUIDialogWebView >> initializeTitled: aTitle containing: aRenderable accept
 	self configureToAcceptOnTrigger
 ]
 
-{ #category : #configuring }
+{ #category : 'configuring' }
 JQueryUIDialogWebView >> on [
 
 	^ interactionInterpreter
 ]
 
-{ #category : #rendering }
+{ #category : 'rendering' }
 JQueryUIDialogWebView >> renderContentOn: aCanvas [
 
 	aCanvas div with: contentsView applying: commandToComponent
