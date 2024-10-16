@@ -3,34 +3,36 @@ Accordion component.
 https://jqueryui.com/accordion/
 "
 Class {
-	#name : #JQueryUICollapsibleSectionWebView,
-	#superclass : #WAPainter,
+	#name : 'JQueryUICollapsibleSectionWebView',
+	#superclass : 'WAPainter',
 	#instVars : [
 		'sections',
 		'commandToComponent'
 	],
-	#category : #'Willow-JQueryUI-WebViews'
+	#category : 'Willow-JQueryUI-WebViews',
+	#package : 'Willow-JQueryUI',
+	#tag : 'WebViews'
 }
 
-{ #category : #'instance creation' }
+{ #category : 'instance creation' }
 JQueryUICollapsibleSectionWebView class >> applying: aBlockOrWebComponentCommand [
 
 	^ self new initializeApplying: aBlockOrWebComponentCommand
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 JQueryUICollapsibleSectionWebView >> addCollapsedSectionNamed: aName containing: aContent [
 
 	self addSectionNamed: aName containing: aContent applying: self initiallyCollapsedCommand
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 JQueryUICollapsibleSectionWebView >> addSectionNamed: aName containing: aContent [
 
 	self addSectionNamed: aName containing: aContent applying: [  ]
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 JQueryUICollapsibleSectionWebView >> addSectionNamed: aName containing: aContent applying: aCommandToSection [
 
 	sections
@@ -40,20 +42,20 @@ JQueryUICollapsibleSectionWebView >> addSectionNamed: aName containing: aContent
 			]
 ]
 
-{ #category : #initialization }
+{ #category : 'initialization' }
 JQueryUICollapsibleSectionWebView >> initializeApplying: aBlockOrWebComponentCommand [
 
 	sections := OrderedCollection new.
 	commandToComponent := aBlockOrWebComponentCommand asWebComponentCommand
 ]
 
-{ #category : #'private - accessing' }
+{ #category : 'private - accessing' }
 JQueryUICollapsibleSectionWebView >> initiallyCollapsedCommand [
 
 	^ [ :view | view setStyleTo: [ :style | style display: #none ] ]
 ]
 
-{ #category : #rendering }
+{ #category : 'rendering' }
 JQueryUICollapsibleSectionWebView >> renderContentOn: aCanvas [
 
 	aCanvas div

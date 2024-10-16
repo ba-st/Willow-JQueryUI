@@ -1,6 +1,6 @@
-Extension { #name : #ComponentStyleClassUpdateBuilder }
+Extension { #name : 'ComponentStyleClassUpdateBuilder' }
 
-{ #category : #'*Willow-JQueryUI' }
+{ #category : '*Willow-JQueryUI' }
 ComponentStyleClassUpdateBuilder >> toggleClass: aCssClass withEffect: anEffectSelector [
 
 	transformations

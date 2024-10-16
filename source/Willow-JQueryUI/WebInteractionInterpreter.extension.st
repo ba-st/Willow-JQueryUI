@@ -1,12 +1,12 @@
-Extension { #name : #WebInteractionInterpreter }
+Extension { #name : 'WebInteractionInterpreter' }
 
-{ #category : #'*Willow-JQueryUI' }
+{ #category : '*Willow-JQueryUI' }
 WebInteractionInterpreter >> acceptContainerDialog [
 
 	interaction onTriggerExecute: JQueryUIDialogButtonClickingCommand new
 ]
 
-{ #category : #'*Willow-JQueryUI' }
+{ #category : '*Willow-JQueryUI' }
 WebInteractionInterpreter >> showJQueryUILoadingNotification [
 
 	| classes |

@@ -2,18 +2,20 @@
 The catalog implementation when using JQuery UI
 "
 Class {
-	#name : #JQueryUIComponentSupplier,
-	#superclass : #FrontendComponentSupplier,
+	#name : 'JQueryUIComponentSupplier',
+	#superclass : 'FrontendComponentSupplier',
 	#instVars : [
 		'jQueryUILibraries'
 	],
 	#pools : [
 		'Willow'
 	],
-	#category : #'Willow-JQueryUI-Frontend'
+	#category : 'Willow-JQueryUI-Frontend',
+	#package : 'Willow-JQueryUI',
+	#tag : 'Frontend'
 }
 
-{ #category : #'class initialization' }
+{ #category : 'class initialization' }
 JQueryUIComponentSupplier class >> initialize [
 
 	<ignoreForCoverage>
@@ -21,7 +23,7 @@ JQueryUIComponentSupplier class >> initialize [
 	self initializeJQueryUIClasses
 ]
 
-{ #category : #'class initialization' }
+{ #category : 'class initialization' }
 JQueryUIComponentSupplier class >> initializeDialogClasses [
 
 	<ignoreForCoverage>
@@ -31,7 +33,7 @@ JQueryUIComponentSupplier class >> initializeDialogClasses [
 		bind: #uiDialogContent to: 'ui-dialog-content'
 ]
 
-{ #category : #'class initialization' }
+{ #category : 'class initialization' }
 JQueryUIComponentSupplier class >> initializeIconsClasses [
 
 	<ignoreForCoverage>
@@ -53,7 +55,7 @@ JQueryUIComponentSupplier class >> initializeIconsClasses [
 		bind: #uiIconClose to: 'ui-icon-close'
 ]
 
-{ #category : #'class initialization' }
+{ #category : 'class initialization' }
 JQueryUIComponentSupplier class >> initializeJQueryUIClasses [
 
 	<ignoreForCoverage>
@@ -78,37 +80,37 @@ JQueryUIComponentSupplier class >> initializeJQueryUIClasses [
 		initializeIconsClasses
 ]
 
-{ #category : #'instance creation' }
+{ #category : 'instance creation' }
 JQueryUIComponentSupplier class >> online [
 
 	^ self usingAll: {JQueryUIOnlineLibrary default}
 ]
 
-{ #category : #'instance creation - private' }
+{ #category : 'instance creation - private' }
 JQueryUIComponentSupplier class >> usingAll: aLibraryCollection [
 
 	^ self new initializeUsingAll: aLibraryCollection
 ]
 
-{ #category : #'instance creation' }
+{ #category : 'instance creation' }
 JQueryUIComponentSupplier class >> withJQueryUILibrary: aJQueryUILibrary [
 
 	^ self usingAll: {aJQueryUILibrary}
 ]
 
-{ #category : #Supplying }
+{ #category : 'Supplying' }
 JQueryUIComponentSupplier >> asynchronicButtonLabeled: aRenderable applying: aComponentCommand [
 
 	^ AsynchronicButtonWebView labeled: aRenderable applying: aComponentCommand
 ]
 
-{ #category : #Supplying }
+{ #category : 'Supplying' }
 JQueryUIComponentSupplier >> asynchronicLinkLabeled: aRenderable applying: aComponentCommand [
 
 	^ LinkWebView asynchronicLabeled: aRenderable applying: aComponentCommand
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 JQueryUIComponentSupplier >> borderedWidgetCssStyles [
 
 	^ OrderedCollection new
@@ -117,7 +119,7 @@ JQueryUIComponentSupplier >> borderedWidgetCssStyles [
 		yourself
 ]
 
-{ #category : #Supplying }
+{ #category : 'Supplying' }
 JQueryUIComponentSupplier >> checkboxLabeled: aRenderable onModel: anObjectToUseWhenOn offModel: anObjectToUseWhenOff applying: aCommandToComponent [
 
 	^ CheckboxWebView
@@ -127,7 +129,7 @@ JQueryUIComponentSupplier >> checkboxLabeled: aRenderable onModel: anObjectToUse
 		applying: aCommandToComponent
 ]
 
-{ #category : #Supplying }
+{ #category : 'Supplying' }
 JQueryUIComponentSupplier >> checkboxUnlabeledOnModel: anObjectToUseWhenOn offModel: anObjectToUseWhenOff applying: aCommandToComponent [
 
 	^ CheckboxWebView
@@ -136,19 +138,19 @@ JQueryUIComponentSupplier >> checkboxUnlabeledOnModel: anObjectToUseWhenOn offMo
 		applying: aCommandToComponent
 ]
 
-{ #category : #Supplying }
+{ #category : 'Supplying' }
 JQueryUIComponentSupplier >> decimalNumberFieldApplying: aComponentCommand [
 
 	^ NumberFieldWebView applying: aComponentCommand transformingWith: FloatCodec new
 ]
 
-{ #category : #'Supplying - Non Portable' }
+{ #category : 'Supplying - Non Portable' }
 JQueryUIComponentSupplier >> dialogBuilder [
 
 	^ JQueryUIDialogBuilder new
 ]
 
-{ #category : #Supplying }
+{ #category : 'Supplying' }
 JQueryUIComponentSupplier >> dropdownListApplying: aComponentCommand applyingToOptions: anOptionCommand [
 
 	^ SingleSelectionWebView
@@ -156,7 +158,7 @@ JQueryUIComponentSupplier >> dropdownListApplying: aComponentCommand applyingToO
 		applyingToOptions: anOptionCommand
 ]
 
-{ #category : #Supplying }
+{ #category : 'Supplying' }
 JQueryUIComponentSupplier >> fieldSetContaining: aWebView applying: fieldSetCommand withLegend: aTitle applying: legendCommand [
 
 	^ FieldSetWebView
@@ -166,7 +168,7 @@ JQueryUIComponentSupplier >> fieldSetContaining: aWebView applying: fieldSetComm
 		applying: legendCommand
 ]
 
-{ #category : #'Supplying - Non Portable' }
+{ #category : 'Supplying - Non Portable' }
 JQueryUIComponentSupplier >> fieldSetTitled: aTitle containing: aWebView styledAsAll: aCssStyleCollection [
 
 	| styles fieldSetCommand |
@@ -183,13 +185,13 @@ JQueryUIComponentSupplier >> fieldSetTitled: aTitle containing: aWebView styledA
 			[ :legend | legend addClass jQueryUI uiWidgetHeader + legend addClass jQueryUI uiCornerAll ]
 ]
 
-{ #category : #initialization }
+{ #category : 'initialization' }
 JQueryUIComponentSupplier >> initializeUsingAll: aLibraryCollection [
 
 	jQueryUILibraries := aLibraryCollection
 ]
 
-{ #category : #'Supplying - Non Portable' }
+{ #category : 'Supplying - Non Portable' }
 JQueryUIComponentSupplier >> interactiveButtonDescribedBy: aString [
 
 	^ self
@@ -198,7 +200,7 @@ JQueryUIComponentSupplier >> interactiveButtonDescribedBy: aString [
 		evaluating: [  ]
 ]
 
-{ #category : #'Supplying - Non Portable' }
+{ #category : 'Supplying - Non Portable' }
 JQueryUIComponentSupplier >> interactiveButtonDescribedBy: aDescription representedBy: anIcon [
 
 	^ self
@@ -207,19 +209,19 @@ JQueryUIComponentSupplier >> interactiveButtonDescribedBy: aDescription represen
 		evaluating: [  ]
 ]
 
-{ #category : #'accessing - private' }
+{ #category : 'accessing - private' }
 JQueryUIComponentSupplier >> jQueryUI [
 
 	^ Classification >> #jQueryUI
 ]
 
-{ #category : #Supplying }
+{ #category : 'Supplying' }
 JQueryUIComponentSupplier >> multiLineTextFieldApplying: aComponentCommand [
 
 	^ TextFieldWebView multiLineApplying: aComponentCommand
 ]
 
-{ #category : #Supplying }
+{ #category : 'Supplying' }
 JQueryUIComponentSupplier >> multipleSelectionListBoxDisplayingAtOnce: aNumberOfElements applying: aComponentCommand [
 
 	^ MultipleSelectionListBoxWebView
@@ -227,7 +229,7 @@ JQueryUIComponentSupplier >> multipleSelectionListBoxDisplayingAtOnce: aNumberOf
 		applying: aComponentCommand
 ]
 
-{ #category : #Supplying }
+{ #category : 'Supplying' }
 JQueryUIComponentSupplier >> naturalNumberFieldApplying: aComponentCommand [
 
 	^ NumberFieldWebView
@@ -235,7 +237,7 @@ JQueryUIComponentSupplier >> naturalNumberFieldApplying: aComponentCommand [
 		transformingWith: NaturalNumberCodec new
 ]
 
-{ #category : #Supplying }
+{ #category : 'Supplying' }
 JQueryUIComponentSupplier >> radioRenderingWith: aRenderingBlock applyingToLabel: aCommandToLabel applyingToInput: aCommandToInput [
 
 	^RadioGroupWebView 
@@ -244,13 +246,13 @@ JQueryUIComponentSupplier >> radioRenderingWith: aRenderingBlock applyingToLabel
 		applyingToInput: aCommandToInput
 ]
 
-{ #category : #Supplying }
+{ #category : 'Supplying' }
 JQueryUIComponentSupplier >> singleLineTextFieldApplying: aComponentCommand [
 
 	^ TextFieldWebView singleLineApplying: aComponentCommand
 ]
 
-{ #category : #Supplying }
+{ #category : 'Supplying' }
 JQueryUIComponentSupplier >> singleSelectionListBoxDisplayingAtOnce: aNumberOfElements applying: aComponentCommand applyingToOptions: anOptionCommand [
 
 	^ SingleSelectionWebView
@@ -259,14 +261,14 @@ JQueryUIComponentSupplier >> singleSelectionListBoxDisplayingAtOnce: aNumberOfEl
 		applyingToOptions: anOptionCommand
 ]
 
-{ #category : #Interaction }
+{ #category : 'Interaction' }
 JQueryUIComponentSupplier >> statementToCloseDialogsIn: jQueryMatchingDialogContainer matching: dialogSupplier on: aCanvas [
 
 	^ ( dialogSupplier value: ( aCanvas jQuery class: self jQueryUI >> #uiDialogContent ) ) dialog
 		close
 ]
 
-{ #category : #Supplying }
+{ #category : 'Supplying' }
 JQueryUIComponentSupplier >> synchronicButtonLabeled: aRenderable applying: aComponentCommand evaluating: anActionBlock [
 
 	^ SynchronicSubmitButtonWebView
@@ -275,19 +277,19 @@ JQueryUIComponentSupplier >> synchronicButtonLabeled: aRenderable applying: aCom
 		evaluating: anActionBlock
 ]
 
-{ #category : #Supplying }
+{ #category : 'Supplying' }
 JQueryUIComponentSupplier >> synchronicLinkLabeled: aRenderable applying: aComponentCommand [
 
 	^ LinkWebView synchronicLabeled: aRenderable applying: aComponentCommand
 ]
 
-{ #category : #Supplying }
+{ #category : 'Supplying' }
 JQueryUIComponentSupplier >> tableBuilder [
 
 	^ TableWebViewBuilder new
 ]
 
-{ #category : #Supplying }
+{ #category : 'Supplying' }
 JQueryUIComponentSupplier >> unorderedListApplying: aCommandToList listing: aCollection applyingToEach: aCommandToItem [
 
 	^ UnorderedListWebView
@@ -296,7 +298,7 @@ JQueryUIComponentSupplier >> unorderedListApplying: aCommandToList listing: aCol
 		applyingToEach: aCommandToItem
 ]
 
-{ #category : #Processing }
+{ #category : 'Processing' }
 JQueryUIComponentSupplier >> updateRoot: aRoot [
 
 	aRoot beHtml5.
@@ -306,7 +308,7 @@ JQueryUIComponentSupplier >> updateRoot: aRoot [
 	jQueryUILibraries do: [ :library | library updateRoot: aRoot ]
 ]
 
-{ #category : #'accessing - private' }
+{ #category : 'accessing - private' }
 JQueryUIComponentSupplier >> widgetCssStyles [
 
 	^ OrderedCollection new

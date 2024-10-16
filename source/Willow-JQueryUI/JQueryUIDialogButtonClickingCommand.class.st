@@ -2,48 +2,50 @@
 I'm a component command with the logic to configure the interaction of the accept button of a JQueryUI dialog.
 "
 Class {
-	#name : #JQueryUIDialogButtonClickingCommand,
-	#superclass : #WebInteractionCommand,
-	#category : #'Willow-JQueryUI-Frontend'
+	#name : 'JQueryUIDialogButtonClickingCommand',
+	#superclass : 'WebInteractionCommand',
+	#category : 'Willow-JQueryUI-Frontend',
+	#package : 'Willow-JQueryUI',
+	#tag : 'Frontend'
 }
 
-{ #category : #'accessing - private' }
+{ #category : 'accessing - private' }
 JQueryUIDialogButtonClickingCommand >> dialogButtonsOn: aCanvas [
 
 	^ aCanvas jQuery: 'div.ui-dialog-buttonset button.ui-button'
 ]
 
-{ #category : #'accessing - private' }
+{ #category : 'accessing - private' }
 JQueryUIDialogButtonClickingCommand >> firstDialogButtonOn: aCanvas [
 
 	^ ((self parentDialogOn: aCanvas) find: (self dialogButtonsOn: aCanvas)) first
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 JQueryUIDialogButtonClickingCommand >> modelLoadingInstructions [
 
 	^ WebInteractionInstructions empty
 ]
 
-{ #category : #'accessing - private' }
+{ #category : 'accessing - private' }
 JQueryUIDialogButtonClickingCommand >> parentDialogOn: aCanvas [
 
 	^ aCanvas jQuery this closest: 'div.ui-dialog'
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 JQueryUIDialogButtonClickingCommand >> priorityActions [
 
 	^ #()
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 JQueryUIDialogButtonClickingCommand >> requiresSerialization [
 
 	^ false
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 JQueryUIDialogButtonClickingCommand >> serverIndependentInstructions [
 
 	^ WebInteractionInstructions

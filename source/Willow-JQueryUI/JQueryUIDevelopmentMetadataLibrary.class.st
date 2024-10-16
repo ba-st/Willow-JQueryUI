@@ -2,12 +2,14 @@
 I'm a WALibrary serving the files in source form, suitable for development
 "
 Class {
-	#name : #JQueryUIDevelopmentMetadataLibrary,
-	#superclass : #JQueryUIMetadataLibrary,
-	#category : #'Willow-JQueryUI-Libraries'
+	#name : 'JQueryUIDevelopmentMetadataLibrary',
+	#superclass : 'JQueryUIMetadataLibrary',
+	#category : 'Willow-JQueryUI-Libraries',
+	#package : 'Willow-JQueryUI',
+	#tag : 'Libraries'
 }
 
-{ #category : #'uploaded metadata' }
+{ #category : 'uploaded metadata' }
 JQueryUIDevelopmentMetadataLibrary >> jqueryuiJs [
 
 	^ WAFileLibraryResource
@@ -17,7 +19,7 @@ JQueryUIDevelopmentMetadataLibrary >> jqueryuiJs [
 		contents: (GRDelayedSend receiver: self selector: #jqueryuiJsContent)
 ]
 
-{ #category : #uploaded }
+{ #category : 'uploaded' }
 JQueryUIDevelopmentMetadataLibrary >> jqueryuiJsContent [
 	^ '/*! jQuery UI - v1.13.2 - 2022-07-14
 * http://jqueryui.com
@@ -19083,14 +19085,14 @@ var widgetsTooltip = $.ui.tooltip;
 } );'
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 JQueryUIDevelopmentMetadataLibrary >> selectorsToInclude [
 
 	<ignoreForCoverage>
 	^ #(themespeppergrinderthemeCss themespeppergrinderjqueryuiCss jqueryuiJs)
 ]
 
-{ #category : #'uploaded metadata' }
+{ #category : 'uploaded metadata' }
 JQueryUIDevelopmentMetadataLibrary >> themespeppergrinderjqueryuiCss [
 
 	^ WAFileLibraryResource
@@ -19100,7 +19102,7 @@ JQueryUIDevelopmentMetadataLibrary >> themespeppergrinderjqueryuiCss [
 		contents: (GRDelayedSend receiver: self selector: #themespeppergrinderjqueryuiCssContent)
 ]
 
-{ #category : #uploaded }
+{ #category : 'uploaded' }
 JQueryUIDevelopmentMetadataLibrary >> themespeppergrinderjqueryuiCssContent [
 	^ '/*! jQuery UI - v1.13.2 - 2022-07-14
 * http://jqueryui.com

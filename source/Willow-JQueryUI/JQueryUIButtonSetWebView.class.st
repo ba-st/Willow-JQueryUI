@@ -3,17 +3,19 @@ Button Set Component.
 https://api.jqueryui.com/buttonset/
 "
 Class {
-	#name : #JQueryUIButtonSetWebView,
-	#superclass : #SingleSelectionWebViewBehavior,
+	#name : 'JQueryUIButtonSetWebView',
+	#superclass : 'SingleSelectionWebViewBehavior',
 	#instVars : [
 		'commandToComponent',
 		'interactionInterpreter',
 		'elementCommandProvider'
 	],
-	#category : #'Willow-JQueryUI-WebViews'
+	#category : 'Willow-JQueryUI-WebViews',
+	#package : 'Willow-JQueryUI',
+	#tag : 'WebViews'
 }
 
-{ #category : #'instance creation' }
+{ #category : 'instance creation' }
 JQueryUIButtonSetWebView class >> applying: aCommandToComponent obtainingCommandFrom: aLabelCommandProvider [
 
 	^ self new
@@ -21,7 +23,7 @@ JQueryUIButtonSetWebView class >> applying: aCommandToComponent obtainingCommand
 		obtainingCommandFrom: aLabelCommandProvider
 ]
 
-{ #category : #initialization }
+{ #category : 'initialization' }
 JQueryUIButtonSetWebView >> initializeApplying: aCommandToComponent obtainingCommandFrom: aLabelCommandProvider [
 
 	commandToComponent := aCommandToComponent.
@@ -29,13 +31,13 @@ JQueryUIButtonSetWebView >> initializeApplying: aCommandToComponent obtainingCom
 	interactionInterpreter := EventInterpreterDispatcher defaultingToChange
 ]
 
-{ #category : #configuring }
+{ #category : 'configuring' }
 JQueryUIButtonSetWebView >> on [
 
 	^ interactionInterpreter
 ]
 
-{ #category : #rendering }
+{ #category : 'rendering' }
 JQueryUIButtonSetWebView >> renderContentOn: aCanvas [
 
 	( self renderedComponentOn: aCanvas )
@@ -43,7 +45,7 @@ JQueryUIButtonSetWebView >> renderContentOn: aCanvas [
 		applying: commandToComponent
 ]
 
-{ #category : #'private-rendering' }
+{ #category : 'private-rendering' }
 JQueryUIButtonSetWebView >> renderLabelFor: anElement representedBy: radioButton identifiedAs: radioButtonId on: aCanvas [
 
 	aCanvas label
@@ -51,7 +53,7 @@ JQueryUIButtonSetWebView >> renderLabelFor: anElement representedBy: radioButton
 		for: radioButtonId
 ]
 
-{ #category : #'private-rendering' }
+{ #category : 'private-rendering' }
 JQueryUIButtonSetWebView >> renderRadioButtonFor: anElement asPartOf: aRadioGroup on: aCanvas [
 
 	| radioButtonId radioButton |
@@ -70,7 +72,7 @@ JQueryUIButtonSetWebView >> renderRadioButtonFor: anElement asPartOf: aRadioGrou
 		on: aCanvas
 ]
 
-{ #category : #'private-rendering' }
+{ #category : 'private-rendering' }
 JQueryUIButtonSetWebView >> renderRadioGroupOn: aCanvas [
 
 	aCanvas radioGroup
@@ -81,7 +83,7 @@ JQueryUIButtonSetWebView >> renderRadioGroupOn: aCanvas [
 				do: [ :element | self renderRadioButtonFor: element asPartOf: radioGroup on: aCanvas ] ]
 ]
 
-{ #category : #'private-rendering' }
+{ #category : 'private-rendering' }
 JQueryUIButtonSetWebView >> renderedButtonIdentifiedAs: radioButtonId for: anElement asPartOf: aRadioGroup on: aCanvas [
 
 	| radioButton |
@@ -94,7 +96,7 @@ JQueryUIButtonSetWebView >> renderedButtonIdentifiedAs: radioButtonId for: anEle
 	^ radioButton
 ]
 
-{ #category : #'private-rendering' }
+{ #category : 'private-rendering' }
 JQueryUIButtonSetWebView >> renderedComponentOn: aCanvas [
 
 	^(aCanvas div)
