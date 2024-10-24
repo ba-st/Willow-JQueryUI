@@ -2,8 +2,8 @@
 I'm a test for JQuery UI related extensions on WebInteractionInterpreter
 "
 Class {
-	#name : #JQueryUIWebInteractionInterpreterTest,
-	#superclass : #BWRenderingTest,
+	#name : 'JQueryUIWebInteractionInterpreterTest',
+	#superclass : 'BWRenderingTest',
 	#instVars : [
 		'okButton',
 		'cancelButton'
@@ -11,10 +11,12 @@ Class {
 	#pools : [
 		'Willow'
 	],
-	#category : #'Willow-JQueryUI-Tests-WebInteraction'
+	#category : 'Willow-JQueryUI-Tests-WebInteraction',
+	#package : 'Willow-JQueryUI-Tests',
+	#tag : 'WebInteraction'
 }
 
-{ #category : #initialization }
+{ #category : 'initialization' }
 JQueryUIWebInteractionInterpreterTest >> setUp [
 
 	super setUp.
@@ -22,7 +24,7 @@ JQueryUIWebInteractionInterpreterTest >> setUp [
 	cancelButton := AsynchronicButtonWebView labeled: 'Cancel'
 ]
 
-{ #category : #tests }
+{ #category : 'tests' }
 JQueryUIWebInteractionInterpreterTest >> testAcceptContainerDialog [
 
 	| interpreter html |
@@ -38,7 +40,7 @@ JQueryUIWebInteractionInterpreterTest >> testAcceptContainerDialog [
 			'<input class="willow" id="input-id1" type="text"/><script type="text/javascript">$("#input-id1").click(function(event){$(this).closest("div.ui-dialog").find($("div.ui-dialog-buttonset button.ui-button")).first().click()});</script>'
 ]
 
-{ #category : #tests }
+{ #category : 'tests' }
 JQueryUIWebInteractionInterpreterTest >> testCombinedToggleCssClassOnComponentsWithClassWithEffect [
 
 	| interpreter html |
@@ -64,7 +66,7 @@ JQueryUIWebInteractionInterpreterTest >> testCombinedToggleCssClassOnComponentsW
 			'<button id="button-id1" type="button">Ok</button><button id="button-id2" type="button">Cancel</button><script type="text/javascript">$("#button-id1").click(function(event){$(".willow").toggleClass("willow-loading").effect("bounce",{"times":1},"slow")});$("#button-id2").click(function(event){$(".willow").toggleClass("willow-loading").effect("bounce",{"times":1},"slow")});</script>'
 ]
 
-{ #category : #tests }
+{ #category : 'tests' }
 JQueryUIWebInteractionInterpreterTest >> testToggleCssClassOnComponentsWithClassWithEffect [
 
 	| interpreter html |

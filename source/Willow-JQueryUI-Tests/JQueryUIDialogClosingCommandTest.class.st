@@ -2,30 +2,32 @@
 A DialogClosingCommandTest is a test class for testing the behavior of DialogClosingCommand using the JQueryUI Component Supplier
 "
 Class {
-	#name : #JQueryUIDialogClosingCommandTest,
-	#superclass : #BWRenderingTest,
-	#category : #'Willow-JQueryUI-Tests-WebInteraction'
+	#name : 'JQueryUIDialogClosingCommandTest',
+	#superclass : 'BWRenderingTest',
+	#category : 'Willow-JQueryUI-Tests-WebInteraction',
+	#package : 'Willow-JQueryUI-Tests',
+	#tag : 'WebInteraction'
 }
 
-{ #category : #private }
+{ #category : 'private' }
 JQueryUIDialogClosingCommandTest >> componentSupplier [
 
 	^ JQueryUIComponentSupplier online
 ]
 
-{ #category : #private }
+{ #category : 'private' }
 JQueryUIDialogClosingCommandTest >> createHandlers [
 
 	^ Array with: self
 ]
 
-{ #category : #private }
+{ #category : 'private' }
 JQueryUIDialogClosingCommandTest >> isSession [
 
 	^ true
 ]
 
-{ #category : #tests }
+{ #category : 'tests' }
 JQueryUIDialogClosingCommandTest >> testModelLoadingActionsWhenOnlyRemovingLastDialog [
 
 	| html |
@@ -47,7 +49,7 @@ JQueryUIDialogClosingCommandTest >> testModelLoadingActionsWhenOnlyRemovingLastD
 			'<a id="a-id1"></a><script type="text/javascript">$("#a-id1").click(function(){$(".ui-dialog-content").last().dialog("close")});</script>'
 ]
 
-{ #category : #tests }
+{ #category : 'tests' }
 JQueryUIDialogClosingCommandTest >> testModelLoadingActionsWhenRemovingAllDialogs [
 
 	| html |

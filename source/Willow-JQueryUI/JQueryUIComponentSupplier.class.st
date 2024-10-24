@@ -60,21 +60,23 @@ JQueryUIComponentSupplier class >> initializeJQueryUIClasses [
 
 	<ignoreForCoverage>
 	Classification bind: #jQueryUI to: Namespace new.
-	(Classification >> #jQueryUI)
-		bind: #uiIcon to: 'ui-icon';
-		bind: #uiCornerLeft to: 'ui-corner-left';
-		bind: #uiWidget to: 'ui-widget';
+	( Classification >> #jQueryUI )
+		bind: #uiButton to: 'ui-button';
+		bind: #uiButtonIconPrimary to: 'ui-button-icon-primary';
 		bind: #uiCornerAll to: 'ui-corner-all';
-		bind: #uiStateFocus to: 'ui-state-focus';
-		bind: #uiWidgetHeader to: 'ui-widget-header';
-		bind: #uiStateDefault to: 'ui-state-default';
-		bind: #uiStateHover to: 'ui-state-hover';
+		bind: #uiCornerLeft to: 'ui-corner-left';
 		bind: #uiFront to: 'ui-front';
 		bind: #uiHelperClearfix to: 'ui-helper-clearfix';
-		bind: #uiButtonIconPrimary to: 'ui-button-icon-primary';
-		bind: #uiWidgetContent to: 'ui-widget-content';
+		bind: #uiIcon to: 'ui-icon';
+		bind: #uiMenuItem to: 'ui-menu-item';
+		bind: #uiProgressbarValue to: 'ui-progressbar-value';
+		bind: #uiStateDefault to: 'ui-state-default';
+		bind: #uiStateFocus to: 'ui-state-focus';
 		bind: #uiStateHighlight to: 'ui-state-highlight';
-		bind: #uiButton to: 'ui-button'.
+		bind: #uiStateHover to: 'ui-state-hover';
+		bind: #uiWidget to: 'ui-widget';
+		bind: #uiWidgetContent to: 'ui-widget-content';
+		bind: #uiWidgetHeader to: 'ui-widget-header'.
 	self
 		initializeDialogClasses;
 		initializeIconsClasses

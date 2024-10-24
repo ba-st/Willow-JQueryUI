@@ -1,10 +1,12 @@
 Class {
-	#name : #JQueryUIDeploymentMetadataLibraryTest,
-	#superclass : #JQueryUIMetadataLibraryDeploymentTest,
-	#category : #'Willow-JQueryUI-Tests-Libraries'
+	#name : 'JQueryUIDeploymentMetadataLibraryTest',
+	#superclass : 'JQueryUIMetadataLibraryDeploymentTest',
+	#category : 'Willow-JQueryUI-Tests-Libraries',
+	#package : 'Willow-JQueryUI-Tests',
+	#tag : 'Libraries'
 }
 
-{ #category : #tests }
+{ #category : 'tests' }
 JQueryUIDeploymentMetadataLibraryTest >> testDeployFiles [
 
 	self
@@ -17,7 +19,7 @@ JQueryUIDeploymentMetadataLibraryTest >> testDeployFiles [
 			 'jquery-ui-1.13.2/themes/pepper-grinder/theme.css' -> '70b9b3a70cdc4c9767e4d74235f39235fb4f2d86'}
 ]
 
-{ #category : #tests }
+{ #category : 'tests' }
 JQueryUIDeploymentMetadataLibraryTest >> testHandlesFolder [
 
 	self
@@ -25,7 +27,7 @@ JQueryUIDeploymentMetadataLibraryTest >> testHandlesFolder [
 		deny: (JQueryUIDeploymentMetadataLibrary handlesFolder: #files)
 ]
 
-{ #category : #tests }
+{ #category : 'tests' }
 JQueryUIDeploymentMetadataLibraryTest >> testIsForDevelopment [
 
 	self
@@ -33,7 +35,7 @@ JQueryUIDeploymentMetadataLibraryTest >> testIsForDevelopment [
 		deny: JQueryUIDeploymentMetadataLibrary isForDevelopment
 ]
 
-{ #category : #tests }
+{ #category : 'tests' }
 JQueryUIDeploymentMetadataLibraryTest >> testUpdateRoot [
 
 	| html |
