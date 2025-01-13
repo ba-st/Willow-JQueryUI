@@ -37,22 +37,24 @@ JQueryUIComponentSupplier class >> initializeDialogClasses [
 JQueryUIComponentSupplier class >> initializeIconsClasses [
 
 	<ignoreForCoverage>
-	Classification >> #jQueryUI
-		bind: #uiIconSeekNext to: 'ui-icon-seek-next';
-		bind: #uiIconArrowthick1W to: 'ui-icon-arrowthick-1-w';
-		bind: #uiIconSeekPrev to: 'ui-icon-seek-prev';
-		bind: #uiIconStar to: 'ui-icon-star';
-		bind: #uiIconComment to: 'ui-icon-comment';
-		bind: #uiIconCheck to: 'ui-icon-check';
+	( Classification >> #jQueryUI )
+		bind: #uiIconArrowthick1E to: 'ui-icon-arrowthick-1-e';
 		bind: #uiIconArrowthick1S to: 'ui-icon-arrowthick-1-s';
-		bind: #uiIconClosethick to: 'ui-icon-closethick';
-		bind: #uiIconPencil to: 'ui-icon-pencil';
+		bind: #uiIconArrowthick1W to: 'ui-icon-arrowthick-1-w';
 		bind: #uiIconCancel to: 'ui-icon-cancel';
+		bind: #uiIconCaret1E to: 'ui-icon-caret-1-e';
+		bind: #uiIconCaret1S to: ' ui-icon-caret-1-s';
+		bind: #uiIconCheck to: 'ui-icon-check';
+		bind: #uiIconClose to: 'ui-icon-close';
+		bind: #uiIconClosethick to: 'ui-icon-closethick';
+		bind: #uiIconComment to: 'ui-icon-comment';
 		bind: #uiIconMinusthick to: 'ui-icon-minusthick';
+		bind: #uiIconPencil to: 'ui-icon-pencil';
 		bind: #uiIconPlus to: 'ui-icon-plus';
 		bind: #uiIconPlusthick to: 'ui-icon-plusthick';
-		bind: #uiIconArrowthick1E to: 'ui-icon-arrowthick-1-e';
-		bind: #uiIconClose to: 'ui-icon-close'
+		bind: #uiIconSeekNext to: 'ui-icon-seek-next';
+		bind: #uiIconSeekPrev to: 'ui-icon-seek-prev';
+		bind: #uiIconStar to: 'ui-icon-star'
 ]
 
 { #category : 'class initialization' }
