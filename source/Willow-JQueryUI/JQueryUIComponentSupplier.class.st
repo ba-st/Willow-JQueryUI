@@ -63,6 +63,7 @@ JQueryUIComponentSupplier class >> initializeJQueryUIClasses [
 	<ignoreForCoverage>
 	Classification bind: #jQueryUI to: Namespace new.
 	( Classification >> #jQueryUI )
+		bind: #uiAutocompleteCategory to: 'ui-autocomplete-category';
 		bind: #uiButton to: 'ui-button';
 		bind: #uiButtonIconPrimary to: 'ui-button-icon-primary';
 		bind: #uiCornerAll to: 'ui-corner-all';
