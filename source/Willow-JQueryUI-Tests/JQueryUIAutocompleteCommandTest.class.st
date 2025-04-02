@@ -37,14 +37,11 @@ JQueryUIAutocompleteCommandTest >> testCommand [
 	self
 		assert: html
 		equals:
-		'<input value="" name="1" id="id4" type="text"/><script type="text/javascript">$("#id4").autocomplete({"source":function(request,response){$.getJSON("/",["2","3="+encodeURIComponent(request.term)].join("&"),function(){response(arguments[0])})}});</script>'
+		'<input value="" name="1" id="id2" type="text"/><script type="text/javascript">$("#id2").animalAutocomplete({"minLength":3,"delay":400,"classes":{"ui-autocomplete":"autocompleteList"}});</script>'
 ]
 
 { #category : 'private - accessing' }
 JQueryUIAutocompleteCommandTest >> textView [
 
-	^ self componentSupplier singleLineTextFieldApplying: [ :view |
-			  JQueryUIAutocompleteCommand obtainingSuggestionsFrom: [ :aTerm |
-					  #( 'cat dog cow elephant snake mouse' ) select: [ :each | each includesSubstring: aTerm ] ]
-		  ]
+	^ self componentSupplier singleLineTextFieldApplying: [ :view | self autocompleteCommand ]
 ]
