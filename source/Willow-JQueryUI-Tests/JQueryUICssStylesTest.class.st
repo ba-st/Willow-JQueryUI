@@ -1,19 +1,21 @@
 Class {
-	#name : #JQueryUICssStylesTest,
-	#superclass : #BWRenderingTest,
+	#name : 'JQueryUICssStylesTest',
+	#superclass : 'BWRenderingTest',
 	#pools : [
 		'Willow'
 	],
-	#category : #'Willow-JQueryUI-Tests-WebViews'
+	#category : 'Willow-JQueryUI-Tests-WebViews',
+	#package : 'Willow-JQueryUI-Tests',
+	#tag : 'WebViews'
 }
 
-{ #category : #'private - asserting' }
+{ #category : 'private - asserting' }
 JQueryUICssStylesTest >> assertClassificationAt: aSymbol equals: anExpectedString [
 
 	self assert: Classification >> #jQueryUI >> aSymbol equals: anExpectedString
 ]
 
-{ #category : #tests }
+{ #category : 'tests' }
 JQueryUICssStylesTest >> testDialogs [
 
 	self
@@ -22,7 +24,7 @@ JQueryUICssStylesTest >> testDialogs [
 		assertClassificationAt: #uiDialogContent equals: 'ui-dialog-content'
 ]
 
-{ #category : #tests }
+{ #category : 'tests' }
 JQueryUICssStylesTest >> testIcons [
 
 	self
@@ -43,22 +45,24 @@ JQueryUICssStylesTest >> testIcons [
 		assertClassificationAt: #uiIconClose equals: 'ui-icon-close'
 ]
 
-{ #category : #tests }
+{ #category : 'tests' }
 JQueryUICssStylesTest >> testWidgets [
 
 	self
-		assertClassificationAt: #uiIcon equals: 'ui-icon';
-		assertClassificationAt: #uiCornerLeft equals: 'ui-corner-left';
-		assertClassificationAt: #uiWidget equals: 'ui-widget';
+		assertClassificationAt: #uiButton equals: 'ui-button';
+		assertClassificationAt: #uiButtonIconPrimary equals: 'ui-button-icon-primary';
 		assertClassificationAt: #uiCornerAll equals: 'ui-corner-all';
-		assertClassificationAt: #uiStateFocus equals: 'ui-state-focus';
-		assertClassificationAt: #uiWidgetHeader equals: 'ui-widget-header';
-		assertClassificationAt: #uiStateDefault equals: 'ui-state-default';
-		assertClassificationAt: #uiStateHover equals: 'ui-state-hover';
+		assertClassificationAt: #uiCornerLeft equals: 'ui-corner-left';
 		assertClassificationAt: #uiFront equals: 'ui-front';
 		assertClassificationAt: #uiHelperClearfix equals: 'ui-helper-clearfix';
-		assertClassificationAt: #uiButtonIconPrimary equals: 'ui-button-icon-primary';
-		assertClassificationAt: #uiWidgetContent equals: 'ui-widget-content';
+		assertClassificationAt: #uiIcon equals: 'ui-icon';
+		assertClassificationAt: #uiMenuItem equals: 'ui-menu-item';
+		assertClassificationAt: #uiProgressbarValue equals: 'ui-progressbar-value';
+		assertClassificationAt: #uiStateDefault equals: 'ui-state-default';
+		assertClassificationAt: #uiStateFocus equals: 'ui-state-focus';
 		assertClassificationAt: #uiStateHighlight equals: 'ui-state-highlight';
-		assertClassificationAt: #uiButton equals: 'ui-button'
+		assertClassificationAt: #uiStateHover equals: 'ui-state-hover';
+		assertClassificationAt: #uiWidget equals: 'ui-widget';
+		assertClassificationAt: #uiWidgetContent equals: 'ui-widget-content';
+		assertClassificationAt: #uiWidgetHeader equals: 'ui-widget-header'
 ]

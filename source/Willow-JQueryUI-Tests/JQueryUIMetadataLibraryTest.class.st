@@ -1,10 +1,12 @@
 Class {
-	#name : #JQueryUIMetadataLibraryTest,
-	#superclass : #TestCase,
-	#category : 'Willow-JQueryUI-Tests-Libraries'
+	#name : 'JQueryUIMetadataLibraryTest',
+	#superclass : 'TestCase',
+	#category : 'Willow-JQueryUI-Tests-Libraries',
+	#package : 'Willow-JQueryUI-Tests',
+	#tag : 'Libraries'
 }
 
-{ #category : #tests }
+{ #category : 'tests' }
 JQueryUIMetadataLibraryTest >> testForDeployment [
 
 	self
@@ -12,7 +14,7 @@ JQueryUIMetadataLibraryTest >> testForDeployment [
 		equals: JQueryUIDeploymentMetadataLibrary
 ]
 
-{ #category : #tests }
+{ #category : 'tests' }
 JQueryUIMetadataLibraryTest >> testForDevelopment [
 
 	self
@@ -20,7 +22,7 @@ JQueryUIMetadataLibraryTest >> testForDevelopment [
 		equals: JQueryUIDevelopmentMetadataLibrary
 ]
 
-{ #category : #tests }
+{ #category : 'tests' }
 JQueryUIMetadataLibraryTest >> testVersionCompatibility [
 
 	self

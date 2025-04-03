@@ -1,16 +1,18 @@
 Class {
-	#name : #JQueryUIMetadataLibraryDeploymentTest,
-	#superclass : #BWRenderingTest,
-	#category : #'Willow-JQueryUI-Tests-Libraries'
+	#name : 'JQueryUIMetadataLibraryDeploymentTest',
+	#superclass : 'BWRenderingTest',
+	#category : 'Willow-JQueryUI-Tests-Libraries',
+	#package : 'Willow-JQueryUI-Tests',
+	#tag : 'Libraries'
 }
 
-{ #category : #testing }
+{ #category : 'testing' }
 JQueryUIMetadataLibraryDeploymentTest class >> isAbstract [
 
 	^ self = JQueryUIMetadataLibraryDeploymentTest
 ]
 
-{ #category : #tests }
+{ #category : 'tests' }
 JQueryUIMetadataLibraryDeploymentTest >> expectedImageFilesContentIntegrity [
 	
 	^ { 'jquery-ui-1.13.2/themes/pepper-grinder/images/ui-bg_diagonal-maze_20_6e4f1c_10x10.png' -> '7760178469039a9098654ed35affd1f2a94b47c4'.

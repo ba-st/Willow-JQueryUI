@@ -31,7 +31,7 @@ JQueryUIAutocompleteCommand >> applyTo: aComponent on: aCanvas [
 	^ ( ComponentScriptCommand toExecute: [ :canvas |
 			    | autocomplete |
 
-			    autocomplete := canvas jQuery this autocomplete.
+			    autocomplete := canvas jQuery this create: CustomizableJQAutocomplete.
 			    configurationCommand value: autocomplete.
 			    selectInterpreter applyTo: autocomplete on: canvas.
 			    autocomplete

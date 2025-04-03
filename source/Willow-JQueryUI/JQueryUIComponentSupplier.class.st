@@ -37,22 +37,24 @@ JQueryUIComponentSupplier class >> initializeDialogClasses [
 JQueryUIComponentSupplier class >> initializeIconsClasses [
 
 	<ignoreForCoverage>
-	Classification >> #jQueryUI
-		bind: #uiIconSeekNext to: 'ui-icon-seek-next';
-		bind: #uiIconArrowthick1W to: 'ui-icon-arrowthick-1-w';
-		bind: #uiIconSeekPrev to: 'ui-icon-seek-prev';
-		bind: #uiIconStar to: 'ui-icon-star';
-		bind: #uiIconComment to: 'ui-icon-comment';
-		bind: #uiIconCheck to: 'ui-icon-check';
+	( Classification >> #jQueryUI )
+		bind: #uiIconArrowthick1E to: 'ui-icon-arrowthick-1-e';
 		bind: #uiIconArrowthick1S to: 'ui-icon-arrowthick-1-s';
-		bind: #uiIconClosethick to: 'ui-icon-closethick';
-		bind: #uiIconPencil to: 'ui-icon-pencil';
+		bind: #uiIconArrowthick1W to: 'ui-icon-arrowthick-1-w';
 		bind: #uiIconCancel to: 'ui-icon-cancel';
+		bind: #uiIconCaret1E to: 'ui-icon-caret-1-e';
+		bind: #uiIconCaret1S to: ' ui-icon-caret-1-s';
+		bind: #uiIconCheck to: 'ui-icon-check';
+		bind: #uiIconClose to: 'ui-icon-close';
+		bind: #uiIconClosethick to: 'ui-icon-closethick';
+		bind: #uiIconComment to: 'ui-icon-comment';
 		bind: #uiIconMinusthick to: 'ui-icon-minusthick';
+		bind: #uiIconPencil to: 'ui-icon-pencil';
 		bind: #uiIconPlus to: 'ui-icon-plus';
 		bind: #uiIconPlusthick to: 'ui-icon-plusthick';
-		bind: #uiIconArrowthick1E to: 'ui-icon-arrowthick-1-e';
-		bind: #uiIconClose to: 'ui-icon-close'
+		bind: #uiIconSeekNext to: 'ui-icon-seek-next';
+		bind: #uiIconSeekPrev to: 'ui-icon-seek-prev';
+		bind: #uiIconStar to: 'ui-icon-star'
 ]
 
 { #category : 'class initialization' }
@@ -60,21 +62,24 @@ JQueryUIComponentSupplier class >> initializeJQueryUIClasses [
 
 	<ignoreForCoverage>
 	Classification bind: #jQueryUI to: Namespace new.
-	(Classification >> #jQueryUI)
-		bind: #uiIcon to: 'ui-icon';
-		bind: #uiCornerLeft to: 'ui-corner-left';
-		bind: #uiWidget to: 'ui-widget';
+	( Classification >> #jQueryUI )
+		bind: #uiAutocompleteCategory to: 'ui-autocomplete-category';
+		bind: #uiButton to: 'ui-button';
+		bind: #uiButtonIconPrimary to: 'ui-button-icon-primary';
 		bind: #uiCornerAll to: 'ui-corner-all';
-		bind: #uiStateFocus to: 'ui-state-focus';
-		bind: #uiWidgetHeader to: 'ui-widget-header';
-		bind: #uiStateDefault to: 'ui-state-default';
-		bind: #uiStateHover to: 'ui-state-hover';
+		bind: #uiCornerLeft to: 'ui-corner-left';
 		bind: #uiFront to: 'ui-front';
 		bind: #uiHelperClearfix to: 'ui-helper-clearfix';
-		bind: #uiButtonIconPrimary to: 'ui-button-icon-primary';
-		bind: #uiWidgetContent to: 'ui-widget-content';
+		bind: #uiIcon to: 'ui-icon';
+		bind: #uiMenuItem to: 'ui-menu-item';
+		bind: #uiProgressbarValue to: 'ui-progressbar-value';
+		bind: #uiStateDefault to: 'ui-state-default';
+		bind: #uiStateFocus to: 'ui-state-focus';
 		bind: #uiStateHighlight to: 'ui-state-highlight';
-		bind: #uiButton to: 'ui-button'.
+		bind: #uiStateHover to: 'ui-state-hover';
+		bind: #uiWidget to: 'ui-widget';
+		bind: #uiWidgetContent to: 'ui-widget-content';
+		bind: #uiWidgetHeader to: 'ui-widget-header'.
 	self
 		initializeDialogClasses;
 		initializeIconsClasses
