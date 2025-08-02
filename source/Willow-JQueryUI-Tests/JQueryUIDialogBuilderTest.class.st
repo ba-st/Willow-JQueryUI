@@ -6,6 +6,30 @@ Class {
 	#tag : 'WebViews'
 }
 
+{ #category : 'accessing' }
+JQueryUIDialogBuilderTest >> componentSupplier [
+
+	^ JQueryUIComponentSupplier online
+]
+
+{ #category : 'utility' }
+JQueryUIDialogBuilderTest >> createHandlers [
+
+	^ Array with: self
+]
+
+{ #category : 'testing' }
+JQueryUIDialogBuilderTest >> isSession [
+
+	^ true
+]
+
+{ #category : 'utility' }
+JQueryUIDialogBuilderTest >> scriptGeneratorClass [
+
+	^ WADefaultScriptGenerator
+]
+
 { #category : 'tests' }
 JQueryUIDialogBuilderTest >> testCantBuildWithoutTitle [
 
@@ -15,19 +39,22 @@ JQueryUIDialogBuilderTest >> testCantBuildWithoutTitle [
 { #category : 'tests' }
 JQueryUIDialogBuilderTest >> testRenderContentOnWithCommands [
 
-	| html dialog |
+	| html |
 
-	dialog := JQueryUIComponentSupplier online dialogBuilder
-		          dismissableHeaderTitled: 'Terms and Conditions';
-		          wrapping: 'Some very large legal stuff. ;)';
-		          buildApplying: [ :document | document addClass willow ].
+	html := self render: [ :canvas |
+			        | dialog |
 
-	html := self render: dialog.
+			        dialog := JQueryUIComponentSupplier online dialogBuilder
+				                  dismissableHeaderTitled: 'Terms and Conditions';
+				                  wrapping: 'Some very large legal stuff. ;)';
+				                  buildApplying: [ :document | document addClass willow ].
+			        canvas render: dialog
+		        ].
 
 	self
 		assert: html
 		equals:
-		'<div class="willow" id="id1">Some very large legal stuff. ;)</div><script type="text/javascript">$("#id1").dialog({"close":function(){$(this).remove();$("#willow-dialog-section").html("")},"height":"auto","width":"auto","title":"Terms and Conditions","autoOpen":true,"resizable":false,"closeOnEscape":true});</script>'
+		'<div id="container-id1" class="willow">Some very large legal stuff. ;)</div><script type="text/javascript">$("#container-id1").dialog({"close":function(){$("#container-id1").closest("div.ui-dialog").remove();$("#willow-dialog-section").html("")},"height":"auto","width":"auto","title":"Terms and Conditions","autoOpen":true,"resizable":false,"closeOnEscape":true});</script>'
 ]
 
 { #category : 'tests' }
@@ -46,7 +73,30 @@ JQueryUIDialogBuilderTest >> testRenderContentOnWithConfirmationButton [
 	self
 		assert: html
 		equals:
-		'<div id="id2">Some very large legal stuff. ;)</div><script type="text/javascript">$("#id2").dialog({"buttons":{"Ok":function(){$(this).remove();$("#willow-dialog-section").html("");Willow.callServer({"type":"POST","url":"/","data":["1",$(this).children("form").serialize()].join("&")})}},"close":function(){$(this).remove();$("#willow-dialog-section").html("")},"height":"auto","width":"auto","title":"Terms and Conditions","autoOpen":true,"resizable":false,"closeOnEscape":true});</script>'
+		'<div id="container-id1">Some very large legal stuff. ;)</div><script type="text/javascript">$("#container-id1").dialog({"buttons":{"Ok":function(){Willow.callServer({"type":"POST","url":"/","data":["2",$(this).children("form").serialize(),$(this).serialize()].join("&")})}},"close":function(){$("#container-id1").closest("div.ui-dialog").remove();$("#willow-dialog-section").html("")},"height":"auto","width":"auto","title":"Terms and Conditions","autoOpen":true,"resizable":false,"closeOnEscape":true});</script>'
+]
+
+{ #category : 'tests' }
+JQueryUIDialogBuilderTest >> testRenderContentOnWithCustomConfirmationCommand [
+
+	| html dialog |
+
+	dialog := JQueryUIComponentSupplier online dialogBuilder
+		          dismissableHeaderTitled: 'Terms and Conditions';
+		          wrapping: 'Some very large legal stuff. ;)';
+		          confirmWith: 'Ok';
+		          build.
+	dialog onConfirmationDo: [ :request :defaultCommand |
+			request onRespond inform: 'Hello!'.
+			defaultCommand value
+		].
+
+	html := self render: dialog.
+
+	self
+		assert: html
+		equals:
+		'<div id="container-id1">Some very large legal stuff. ;)</div><script type="text/javascript">$("#container-id1").dialog({"buttons":{"Ok":function(){Willow.callServer({"type":"POST","url":"/","data":["2",$(this).children("form").serialize(),$(this).serialize()].join("&")})}},"close":function(){$("#container-id1").closest("div.ui-dialog").remove();$("#willow-dialog-section").html("")},"height":"auto","width":"auto","title":"Terms and Conditions","autoOpen":true,"resizable":false,"closeOnEscape":true});</script>'
 ]
 
 { #category : 'tests' }
@@ -64,5 +114,5 @@ JQueryUIDialogBuilderTest >> testRenderContentOnWithoutConfirmationButton [
 	self
 		assert: html
 		equals:
-		'<div id="id1">Some very large legal stuff. ;)</div><script type="text/javascript">$("#id1").dialog({"close":function(){$(this).remove();$("#willow-dialog-section").html("")},"height":"auto","width":"auto","title":"Terms and Conditions","autoOpen":true,"resizable":false,"closeOnEscape":true});</script>'
+		'<div id="container-id1">Some very large legal stuff. ;)</div><script type="text/javascript">$("#container-id1").dialog({"close":function(){$("#container-id1").closest("div.ui-dialog").remove();$("#willow-dialog-section").html("")},"height":"auto","width":"auto","title":"Terms and Conditions","autoOpen":true,"resizable":false,"closeOnEscape":true});</script>'
 ]
