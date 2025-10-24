@@ -10,7 +10,9 @@ Class {
 		'interactionInterpreter',
 		'title',
 		'commandToComponent',
-		'acceptButtonOptional'
+		'acceptButtonOptional',
+		'container',
+		'confirmationCommand'
 	],
 	#pools : [
 		'Willow'
@@ -52,7 +54,11 @@ JQueryUIDialogWebView >> configureAcceptButton [
 
 	self on trigger
 		serializeChildForm;
-		userAgentDo: [ :canvas | self functionToRemoveComponentOn: canvas ]
+		serverDo: [ :request |
+				confirmationCommand
+					cull: request
+					cull: [ request onRespond userAgentDo: [ :canvas | self functionToRemoveComponentOn: canvas ] ]
+			]
 ]
 
 { #category : 'private - configuring' }
@@ -88,8 +94,8 @@ JQueryUIDialogWebView >> dialogScriptOn: aCanvas [
 { #category : 'private - accessing' }
 JQueryUIDialogWebView >> functionToRemoveComponentOn: aCanvas [
 
-	^ aCanvas jQuery this remove
-		, ((aCanvas jQuery id: Constants >> #willow >> #dialogSectionName) html: [ :aSubCanvas |  ])
+	^ ( ( aCanvas jQuery id: ( container identifierOn: aCanvas ) ) closest: 'div.ui-dialog' ) remove
+	  , ( ( aCanvas jQuery id: Constants >> #willow >> #dialogSectionName ) html: [ :aSubCanvas |  ] )
 ]
 
 { #category : 'initialization' }
@@ -97,6 +103,15 @@ JQueryUIDialogWebView >> initializeCommandToComponentWith: aCommand [
 
 	commandToComponent := aCommand asWebComponentCommand
 		+ [ :button | button addScript js: [ :canvas | self dialogScriptOn: canvas ] ]
+]
+
+{ #category : 'initialization' }
+JQueryUIDialogWebView >> initializeContainer [
+
+	container := self componentSupplier
+		             divisionContainerWrapping: contentsView
+		             applying: commandToComponent.
+	container beIdentifiable
 ]
 
 { #category : 'initialization' }
@@ -115,6 +130,8 @@ JQueryUIDialogWebView >> initializeTitled: aTitle containing: aRenderable accept
 	acceptButtonOptional := aTextOptional.
 	self initializeInteractionInterpreter.
 	self initializeCommandToComponentWith: aComponentCommand.
+	self initializeContainer.
+	self onConfirmationDo: [ :request :defaultCommand | defaultCommand value ].
 	self configureToAcceptOnTrigger
 ]
 
@@ -124,8 +141,14 @@ JQueryUIDialogWebView >> on [
 	^ interactionInterpreter
 ]
 
+{ #category : 'configuring' }
+JQueryUIDialogWebView >> onConfirmationDo: aCommand [
+
+	confirmationCommand := aCommand
+]
+
 { #category : 'rendering' }
 JQueryUIDialogWebView >> renderContentOn: aCanvas [
 
-	aCanvas div with: contentsView applying: commandToComponent
+	aCanvas render: container
 ]
