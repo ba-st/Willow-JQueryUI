@@ -1,1 +1,1 @@
-Package { #name : #BaselineOfWillowJQueryUI }
+Package { #name : 'BaselineOfWillowJQueryUI' }
