@@ -60,43 +60,41 @@ JQueryUIDialogBuilderTest >> testRenderContentOnWithCommands [
 { #category : 'tests' }
 JQueryUIDialogBuilderTest >> testRenderContentOnWithConfirmationButton [
 
-	| html dialog |
+  | html dialog |
+  dialog := JQueryUIComponentSupplier online dialogBuilder
+              dismissableHeaderTitled: 'Terms and Conditions';
+              wrapping: 'Some very large legal stuff. ;)';
+              confirmWith: 'Ok';
+              build.
 
-	dialog := JQueryUIComponentSupplier online dialogBuilder
-		          dismissableHeaderTitled: 'Terms and Conditions';
-		          wrapping: 'Some very large legal stuff. ;)';
-		          confirmWith: 'Ok';
-		          build.
+  html := self render: dialog.
 
-	html := self render: dialog.
-
-	self
-		assert: html
-		equals:
-		'<div id="container-id1">Some very large legal stuff. ;)</div><script type="text/javascript">$("#container-id1").dialog({"buttons":{"Ok":function(){Willow.callServer({"type":"POST","url":"/","data":["2",$(this).children("form").serialize(),$(this).serialize()].join("&")})}},"close":function(){$("#container-id1").closest("div.ui-dialog").remove();$("#willow-dialog-section").html("")},"height":"auto","width":"auto","title":"Terms and Conditions","autoOpen":true,"resizable":false,"closeOnEscape":true});</script>'
+  self
+    assert: html
+    equals:
+    '<div id="container-id1">Some very large legal stuff. ;)</div><script type="text/javascript">$("#container-id1").dialog({"buttons":{"Ok":function(){Willow.callServer({"type":"POST","url":"/","data":["2",$(this).children("form").serialize(),$(this).serialize()].join("&"),"dataType":"script"})}},"close":function(){$("#container-id1").closest("div.ui-dialog").remove();$("#willow-dialog-section").html("")},"height":"auto","width":"auto","title":"Terms and Conditions","autoOpen":true,"resizable":false,"closeOnEscape":true});</script>'
 ]
 
 { #category : 'tests' }
 JQueryUIDialogBuilderTest >> testRenderContentOnWithCustomConfirmationCommand [
 
-	| html dialog |
+  | html dialog |
+  dialog := JQueryUIComponentSupplier online dialogBuilder
+              dismissableHeaderTitled: 'Terms and Conditions';
+              wrapping: 'Some very large legal stuff. ;)';
+              confirmWith: 'Ok';
+              build.
+  dialog onConfirmationDo: [ :request :defaultCommand |
+      request onRespond inform: 'Hello!'.
+      defaultCommand value
+    ].
 
-	dialog := JQueryUIComponentSupplier online dialogBuilder
-		          dismissableHeaderTitled: 'Terms and Conditions';
-		          wrapping: 'Some very large legal stuff. ;)';
-		          confirmWith: 'Ok';
-		          build.
-	dialog onConfirmationDo: [ :request :defaultCommand |
-			request onRespond inform: 'Hello!'.
-			defaultCommand value
-		].
+  html := self render: dialog.
 
-	html := self render: dialog.
-
-	self
-		assert: html
-		equals:
-		'<div id="container-id1">Some very large legal stuff. ;)</div><script type="text/javascript">$("#container-id1").dialog({"buttons":{"Ok":function(){Willow.callServer({"type":"POST","url":"/","data":["2",$(this).children("form").serialize(),$(this).serialize()].join("&")})}},"close":function(){$("#container-id1").closest("div.ui-dialog").remove();$("#willow-dialog-section").html("")},"height":"auto","width":"auto","title":"Terms and Conditions","autoOpen":true,"resizable":false,"closeOnEscape":true});</script>'
+  self
+    assert: html
+    equals:
+    '<div id="container-id1">Some very large legal stuff. ;)</div><script type="text/javascript">$("#container-id1").dialog({"buttons":{"Ok":function(){Willow.callServer({"type":"POST","url":"/","data":["2",$(this).children("form").serialize(),$(this).serialize()].join("&"),"dataType":"script"})}},"close":function(){$("#container-id1").closest("div.ui-dialog").remove();$("#willow-dialog-section").html("")},"height":"auto","width":"auto","title":"Terms and Conditions","autoOpen":true,"resizable":false,"closeOnEscape":true});</script>'
 ]
 
 { #category : 'tests' }
